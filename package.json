@@ -1,0 +1,18 @@
+{
+  "name": "dentalbot-pro",
+  "version": "1.0.0",
+  "description": "SaaS local para automatizacion de clinicas dentales.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "dental",
+    "saas",
+    "automation",
+    "appointments"
+  ],
+  "author": "",
+  "license": "MIT"
+}

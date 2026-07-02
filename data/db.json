@@ -1,0 +1,327 @@
+{
+  "clinics": [
+    {
+      "id": "clinic_demo",
+      "clinicName": "Clinica Dental Sonrisa Demo",
+      "dentistName": "Dra. Laura Mendez",
+      "email": "demo@dentalbotpro.com",
+      "phone": "809-555-0180",
+      "passwordHash": "472d8efa120d1ad4466eeb45ca05ed1b:2a5027f2084ef4ae5b68ee63a76c1083e38a8f1e852e151ee003c37c7fe71120a85e072164e857bb9d36323d3a8f0589a2efd837389ecb71d98caeb701156679",
+      "planStatus": "prueba",
+      "createdAt": "2026-07-02T02:04:14.644Z"
+    }
+  ],
+  "patients": [
+    {
+      "id": "pat_ana",
+      "clinicId": "clinic_demo",
+      "name": "Ana Rosario",
+      "phone": "809-221-4488",
+      "email": "ana@example.com",
+      "notes": "Prefiere citas en la manana.",
+      "createdAt": "2026-07-02T02:04:14.644Z"
+    },
+    {
+      "id": "pat_carlos",
+      "clinicId": "clinic_demo",
+      "name": "Carlos Pena",
+      "phone": "809-338-7744",
+      "email": "carlos@example.com",
+      "notes": "Seguimiento de ortodoncia.",
+      "createdAt": "2026-07-02T02:04:14.644Z"
+    },
+    {
+      "id": "pat_maria",
+      "clinicId": "clinic_demo",
+      "name": "Maria Gomez",
+      "phone": "809-440-1200",
+      "email": "maria@example.com",
+      "notes": "Nueva paciente.",
+      "createdAt": "2026-07-02T02:04:14.644Z"
+    },
+    {
+      "id": "pat_4fd45c90313f176c",
+      "clinicId": "clinic_demo",
+      "name": "Elian Lopez",
+      "phone": "829-695-1925",
+      "email": "",
+      "notes": "Creado automaticamente por el bot.",
+      "createdAt": "2026-07-02T02:36:02.166Z"
+    },
+    {
+      "id": "pat_23c4942085ea404c",
+      "clinicId": "clinic_demo",
+      "name": "Prueba Finalizar",
+      "phone": "000-000-0000",
+      "email": "",
+      "notes": "Creado automaticamente por el bot.",
+      "createdAt": "2026-07-02T03:53:29.334Z"
+    },
+    {
+      "id": "pat_5c32faf33d6571ec",
+      "clinicId": "clinic_demo",
+      "name": "Elian",
+      "phone": "8296951925",
+      "email": "",
+      "notes": "Creado automaticamente por el bot.",
+      "createdAt": "2026-07-02T05:32:53.201Z"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "apt_1",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_ana",
+      "patientName": "Ana Rosario",
+      "phone": "809-221-4488",
+      "date": "2026-07-02",
+      "time": "09:30",
+      "reason": "Limpieza dental",
+      "status": "completada",
+      "source": "demo",
+      "createdAt": "2026-07-02T02:04:14.644Z"
+    },
+    {
+      "id": "apt_2",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_carlos",
+      "patientName": "Carlos Pena",
+      "phone": "809-338-7744",
+      "date": "2026-07-02",
+      "time": "11:00",
+      "reason": "Ortodoncia",
+      "status": "completada",
+      "source": "demo",
+      "createdAt": "2026-07-02T02:04:14.644Z"
+    },
+    {
+      "id": "apt_3",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_maria",
+      "patientName": "Maria Gomez",
+      "phone": "809-440-1200",
+      "date": "2026-07-03",
+      "time": "15:00",
+      "reason": "Consulta general",
+      "status": "pendiente",
+      "source": "demo",
+      "createdAt": "2026-07-02T02:04:14.644Z"
+    },
+    {
+      "id": "apt_4",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_ana",
+      "patientName": "Ana Rosario",
+      "phone": "809-221-4488",
+      "date": "2026-07-07",
+      "time": "10:30",
+      "reason": "Blanqueamiento",
+      "status": "confirmada",
+      "source": "demo",
+      "createdAt": "2026-07-02T02:04:14.644Z"
+    },
+    {
+      "id": "apt_c7a4afd488ef80bf",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_4fd45c90313f176c",
+      "patientName": "Elian Lopez",
+      "phone": "829-695-1925",
+      "date": "2026-07-03",
+      "time": "09:00",
+      "reason": "Limpieza",
+      "status": "confirmada",
+      "source": "bot",
+      "createdAt": "2026-07-02T02:36:02.166Z"
+    },
+    {
+      "id": "apt_9a60697d9ba71484",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_4fd45c90313f176c",
+      "patientName": "Elian Lopez",
+      "phone": "829-695-1925",
+      "date": "2026-07-03",
+      "time": "10:30",
+      "reason": "Limpieza dental",
+      "status": "confirmada",
+      "source": "bot",
+      "createdAt": "2026-07-02T03:47:52.714Z"
+    },
+    {
+      "id": "apt_0228bbf48129de12",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_23c4942085ea404c",
+      "patientName": "Prueba Finalizar",
+      "phone": "000-000-0000",
+      "date": "2026-07-04",
+      "time": "08:00",
+      "reason": "Prueba",
+      "status": "completada",
+      "source": "manual",
+      "createdAt": "2026-07-02T03:53:29.334Z"
+    },
+    {
+      "id": "apt_e6e141800e18a92e",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_5c32faf33d6571ec",
+      "patientName": "Elian",
+      "phone": "8296951925",
+      "date": "2026-07-03",
+      "time": "09:00",
+      "reason": "Consulta general",
+      "status": "pendiente",
+      "source": "manual",
+      "createdAt": "2026-07-02T05:32:53.201Z"
+    }
+  ],
+  "botConfigs": [
+    {
+      "clinicId": "clinic_demo",
+      "botName": "DentiBot",
+      "workStart": "08:00",
+      "workEnd": "17:00",
+      "appointmentDuration": 30,
+      "welcomeMessage": "Hola, soy DentiBot. Te ayudo a reservar tu cita dental.",
+      "afterHoursMessage": "Gracias por escribir. Estamos fuera de horario, pero puedo dejar tu solicitud registrada.",
+      "services": [
+        "Consulta general",
+        "Consulta de primera vez",
+        "Revision dental",
+        "Control periodico",
+        "Diagnostico dental",
+        "Limpieza dental",
+        "Limpieza profunda",
+        "Aplicacion de fluor",
+        "Sellantes dentales",
+        "Profilaxis dental",
+        "Blanqueamiento dental",
+        "Diseno de sonrisa",
+        "Carillas dentales",
+        "Resinas esteticas",
+        "Contorneado dental",
+        "Evaluacion ortodontica",
+        "Colocacion de brackets",
+        "Ajuste de brackets",
+        "Retiro de brackets",
+        "Invisalign",
+        "Retenedores",
+        "Tratamiento de conducto",
+        "Retratamiento de conducto",
+        "Urgencia endodontica",
+        "Tratamiento de encias",
+        "Raspado y alisado radicular",
+        "Cirugia periodontal",
+        "Mantenimiento periodontal",
+        "Coronas dentales",
+        "Puentes dentales",
+        "Protesis fija",
+        "Protesis removible",
+        "Reparacion de protesis",
+        "Evaluacion para implantes",
+        "Mantenimiento de implantes",
+        "Extraccion simple",
+        "Extraccion de cordales",
+        "Cirugia oral menor",
+        "Frenectomia",
+        "Consulta infantil",
+        "Limpieza infantil",
+        "Sellantes infantiles",
+        "Radiografia panoramica",
+        "Radiografia periapical",
+        "Radiografia digital",
+        "Escaner intraoral",
+        "Fotografia clinica",
+        "Bruxismo",
+        "Ferula de descarga",
+        "Tratamiento ATM",
+        "Sensibilidad dental",
+        "Halitosis",
+        "Urgencia dental",
+        "Emergencia dental",
+        "Control postoperatorio",
+        "Seguimiento de tratamiento",
+        "Consulta virtual",
+        "Ortodoncia",
+        "Extraccion",
+        "Blanqueamiento"
+      ]
+    }
+  ],
+  "paymentIntents": [],
+  "sessions": [
+    {
+      "token": "4bb241d2179fbb90564333b25cf16f3c0439df56e2032569869931147927b07d",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T14:04:48.326Z"
+    },
+    {
+      "token": "cd4d84acc46ded89e655f5622cba26c2a0e0df5a0498680185a75da7c6aafa6d",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T14:15:33.179Z"
+    },
+    {
+      "token": "86b4cef7e493f68ba6010b84c63c36c215ab78637f049aa0d0557be4c888abbe",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T14:29:15.664Z"
+    },
+    {
+      "token": "80954e023aece85a60621d3b76192e6faaaee58dff8d1a83d63d08f299a4c753",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T14:36:14.539Z"
+    },
+    {
+      "token": "ceca38866986ab1d87033fdaf4ddb5fcab981eaa37b14fe7dc7fad0e183f933d",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T14:44:28.619Z"
+    },
+    {
+      "token": "8adce24974f2884917e847089c1320a1b519a764468ba4465f42387fa215ebd9",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T14:49:24.534Z"
+    },
+    {
+      "token": "1ba346afea6ecf4097c36f4ef2eb9651ea65248e9a10ffb0a24dd44243035a34",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T14:59:54.289Z"
+    },
+    {
+      "token": "383750e9a0d0d613724121c3f8523a6d131369dac137f5c88b300d3a259aacb4",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T15:03:35.480Z"
+    },
+    {
+      "token": "e3d5b22594195490154faf5713c02f2e51d223bd56a6c0aa1e2cd105516899f7",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T15:34:14.870Z"
+    },
+    {
+      "token": "8996b1b99e658720bb558edaa08bd1a5f797a534c0877615e497ab4043da6e7f",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T15:39:53.391Z"
+    },
+    {
+      "token": "edcc8b0489e1ad490f10425d38b73774ee572d80c7f695d3ad82cb72c58bbbda",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T15:44:40.875Z"
+    },
+    {
+      "token": "e98a4bcad24ad2e304162b398cc07f3c644760162ca577a37ccbd97d5a709e05",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T15:48:45.450Z"
+    },
+    {
+      "token": "17de212078f85638071b42316db3a92a5870610f135f21ccf271618e59c0f918",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T15:53:29.321Z"
+    },
+    {
+      "token": "6ae00865377215519e0367eb728cb025fc3bfa829b422633d51ce5b9470d3949",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T15:59:38.697Z"
+    },
+    {
+      "token": "7c08be8676f8821a7b9f92cbb4f21dc77a1b9d8ec329b2363fa5448b640929a5",
+      "clinicId": "clinic_demo",
+      "expiresAt": "2026-07-02T16:11:14.893Z"
+    }
+  ]
+}
