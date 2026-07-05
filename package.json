@@ -1,5 +1,5 @@
 {
-  "name": "dentalbot-pro",
+  "name": "dentace",
   "version": "1.0.0",
   "description": "SaaS local para automatizacion de clinicas dentales.",
   "main": "server.js",

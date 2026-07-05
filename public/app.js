@@ -1,8 +1,8 @@
-﻿const app = document.querySelector("#app");
+const app = document.querySelector("#app");
 const state = {
   token: localStorage.getItem("dentalbot_token") || "",
   clinic: JSON.parse(localStorage.getItem("dentalbot_clinic") || "null"),
-  route: location.hash.replace("#", "") || "landing",
+  route: (location.hash.replace("#", "").split("?")[0]) || "landing",
   appointments: [],
   patients: [],
   dashboard: null,
@@ -23,6 +23,8 @@ const icons = {
   chart: '<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16"></path><path d="M7 16V9"></path><path d="M12 16V5"></path><path d="M17 16v-6"></path></svg></span>',
   settings: '<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5Z"></path><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2 3.4-.2-.1a1.8 1.8 0 0 0-2 .1 8 8 0 0 1-1.4.8 1.8 1.8 0 0 0-1.1 1.6V23H9v-.2a1.8 1.8 0 0 0-1.1-1.6 8 8 0 0 1-1.4-.8 1.8 1.8 0 0 0-2-.1l-.2.1-2-3.4.1-.1A1.7 1.7 0 0 0 2.6 15 8.8 8.8 0 0 1 2.5 13 1.8 1.8 0 0 0 1 11.5H.8V7.5H1a1.8 1.8 0 0 0 1.6-1.1c.2-.5.5-1 .8-1.4a1.8 1.8 0 0 0 .1-2l-.1-.2 3.4-2 .1.1A1.7 1.7 0 0 0 8.8 1c.5-.2 1-.3 1.6-.4A1.8 1.8 0 0 0 12 .1h.1a1.8 1.8 0 0 0 1.6.5c.6.1 1.1.2 1.6.4a1.7 1.7 0 0 0 1.9-.3l.1-.1 3.4 2-.1.2a1.8 1.8 0 0 0 .1 2c.3.4.6.9.8 1.4A1.8 1.8 0 0 0 23 7.5h.2v4H23a1.8 1.8 0 0 0-1.6 1.1c0 .8-.1 1.6-.3 2.4Z"></path></svg></span>',
   services: '<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c3 0 5 2.2 5 5.2 0 2.7-1.5 4.4-2.1 6.8-.5 2-1 6-2.9 6s-2.4-4-2.9-6C8.5 12.6 7 10.9 7 8.2 7 5.2 9 3 12 3Z"></path><path d="M10 5.4c1.1.8 2.9.8 4 0"></path></svg></span>',
+  history: '<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4Z"></path><path d="M8 4v13a3 3 0 0 0 3 3"></path><path d="M12 8v6"></path><path d="M9 11h6"></path></svg></span>',
+  search: '<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"></circle><path d="M16 16l4 4"></path></svg></span>',
   reports: '<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M8 16V9"></path><path d="M12 16v-5"></path><path d="M16 16V7"></path><path d="M7 19h10"></path></svg></span>',  pay: '<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M3 10h18"></path><path d="M7 15h4"></path></svg></span>',
   phone: '<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1.4 1.4 0 0 1 1.4-.3c1.5.5 3 .8 4.2.8V20a2 2 0 0 1-2 2C9.6 22 2 14.4 2 5a2 2 0 0 1 2-2h4.3c0 1.2.3 2.7.8 4.2.2.5.1 1-.3 1.4l-2.2 2.2Z"></path></svg></span>',
   login: '<span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"></path><path d="M3 12h12"></path><path d="M15 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"></path></svg></span>',
@@ -31,7 +33,7 @@ const icons = {
 };
 
 window.addEventListener("hashchange", () => {
-  state.route = location.hash.replace("#", "") || "landing";
+  state.route = (location.hash.replace("#", "").split("?")[0]) || "landing";
   render();
 });
 
@@ -100,13 +102,10 @@ function publicNav() {
   return `
     <header class="topbar premium-nav">
       <div class="topbar-inner">
-        <button class="brand public-brand" data-route="landing" aria-label="DentalBot Pro inicio">
-          <span class="brand-mark">DB</span>
-          <span class="brand-copy"><strong>DentalBot Pro</strong><small>AI Dental Automation</small></span>
+        <button class="brand public-brand" data-route="landing" aria-label="DentAce inicio">
+          <span class="brand-mark">DA</span>
+          <span class="brand-copy"><strong>DentAce</strong><small>AI Dental Automation</small></span>
         </button>
-        <nav class="public-menu" aria-label="Navegacion principal">
-          <a href="#inicio">Inicio</a><a href="#caracteristicas">Caracteristicas</a><a href="#bot-ia">Bot IA</a><a href="#planes">Planes</a><a href="#faq">FAQ</a><a href="#contacto">Contacto</a>
-        </nav>
         <div class="nav-actions"><button class="btn btn-ghost" data-route="login">Iniciar sesion</button><button class="btn btn-primary" data-route="register">Comenzar ahora</button><button class="btn btn-secondary" data-route="app-direct">Ir a la app</button></div>
       </div>
     </header>
@@ -125,9 +124,9 @@ function renderLanding() {
             <div class="hero-price-card glass-panel moving-plan-card">
               <span class="popular-badge">Plan mensual</span>
               <div class="plan-live-row"><span class="live-indicator">IA activa</span><span>Sin contratos largos</span></div>
-              <h2>DentalBot Pro</h2>
+              <h2>DentAce</h2>
               <div class="hero-plan-price"><strong>US$9.99</strong><span>/ mes</span></div>
-              <p>Automatiza citas, pacientes, recordatorios y respuestas con IA desde una sola plataforma.</p>
+              <p>Gestiona citas, pacientes y respuestas con IA desde una sola plataforma.</p>
               <ul class="hero-plan-list">
                 <li>Bot de atencion automatica 24/7</li>
                 <li>Agenda de citas inteligente</li>
@@ -139,14 +138,13 @@ function renderLanding() {
           </div>
         </section>
         <section class="stats-section reveal-up"><div class="stat-card"><strong data-count="3200">0</strong><span>Clinicas registradas</span></div><div class="stat-card"><strong data-count="1800000">0</strong><span>Mensajes enviados</span></div><div class="stat-card"><strong data-count="680000">0</strong><span>Pacientes atendidos</span></div><div class="stat-card"><strong data-count="999">0</strong><span>Disponibilidad</span></div></section>
-        <section class="logos-section reveal-up"><p>Empresas que confian en nosotros</p><div class="logo-cloud"><span>SonrisaCare</span><span>OrthoNova</span><span>DentalHub</span><span>ClinicFlow</span><span>BrightSmile</span></div></section>
-        <section class="showcase-section" id="caracteristicas"><div class="section-title centered-title reveal-up"><span class="eyebrow">Operacion inteligente</span><h2>Un dashboard que se siente como el centro de mando de tu cl&iacute;nica.</h2><p>Agenda, pacientes, mensajes, ingresos, notificaciones y decisiones asistidas por IA en una experiencia visual clara y moderna.</p></div><div class="dashboard-showcase glass-panel reveal-up delay-1"><aside><strong>DentalBot Pro</strong><button>Dashboard</button><button>Agenda</button><button>Pacientes</button><button>IA</button></aside><div class="show-main"><div class="show-header"><div><span>Buenos dias, Dra. Laura</span><h3>Tu cl&iacute;nica esta creciendo</h3></div><span class="live-indicator">IA activa</span></div><div class="show-cards"><div><span>Ingresos</span><strong>US$8,420</strong></div><div><span>Citas nuevas</span><strong>146</strong></div><div><span>Recordatorios</span><strong>2,918</strong></div></div><div class="show-lower"><div class="big-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="notification-stack"><p>Maria confirmo su cita</p><p>Bot agendo ortodoncia</p><p>Recordatorio enviado</p></div></div></div></div></section>
-        <section class="bot-demo-section reveal-up"><div class="demo-copy"><span class="eyebrow">Demo Bot IA</span><h2>Convierte conversaciones en citas reales.</h2><p>El paciente escribe, DentalBot entiende la intencion, ofrece horarios y confirma la reserva sin que tu equipo tenga que intervenir.</p><button class="btn btn-primary" data-route="bot-demo">Probar bot demo</button></div><div class="whatsapp-demo glass-panel"><div class="wa-head"><span></span><div><strong>DentalBot IA</strong><small>en linea</small></div></div><div class="wa-body"><p class="wa in">Hola.</p><p class="wa in">Necesito una limpieza dental.</p><p class="wa out">Con gusto. Cual es su nombre?</p><p class="wa in">Juan Perez</p><p class="wa out">Perfecto. Tengo disponible 10:00, 11:30 y 2:00.</p><p class="wa in">11:30</p><p class="wa out success">Excelente. Tu cita fue confirmada. Enviare recordatorio automaticamente.</p></div></div></section>
+        <section class="showcase-section" id="caracteristicas"><div class="section-title centered-title reveal-up"><span class="eyebrow">Operacion inteligente</span><h2>Un dashboard que se siente como el centro de mando de tu cl&iacute;nica.</h2><p>Agenda, pacientes, mensajes, ingresos, notificaciones y decisiones asistidas por IA en una experiencia visual clara y moderna.</p></div><div class="dashboard-showcase glass-panel reveal-up delay-1"><aside><strong>DentAce</strong><button>Dashboard</button><button>Agenda</button><button>Pacientes</button><button>IA</button></aside><div class="show-main"><div class="show-header"><div><span>Buenos dias, Dra. Laura</span><h3>Tu cl&iacute;nica esta creciendo</h3></div><span class="live-indicator">IA activa</span></div><div class="show-cards"><div><span>Ingresos</span><strong>US$8,420</strong></div><div><span>Citas nuevas</span><strong>146</strong></div><div><span>Recordatorios</span><strong>2,918</strong></div></div><div class="show-lower"><div class="big-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="notification-stack"><p>Maria confirmo su cita</p><p>Bot agendo ortodoncia</p><p>Recordatorio enviado</p></div></div></div></div></section>
+        <section class="bot-demo-section reveal-up"><div class="demo-copy"><span class="eyebrow">Demo Bot IA</span><h2>Convierte conversaciones en citas reales.</h2><p>El paciente escribe, DentAce entiende la intencion, ofrece horarios y confirma la reserva sin que tu equipo tenga que intervenir.</p><button class="btn btn-primary" data-route="bot-demo">Probar bot demo</button></div><div class="whatsapp-demo glass-panel"><div class="wa-head"><span></span><div><strong>DentAce IA</strong><small>en linea</small></div></div><div class="wa-body"><p class="wa in">Hola.</p><p class="wa in">Necesito una limpieza dental.</p><p class="wa out">Con gusto. Cual es su nombre?</p><p class="wa in">Juan Perez</p><p class="wa out">Perfecto. Tengo disponible 10:00, 11:30 y 2:00.</p><p class="wa in">11:30</p><p class="wa out success">Excelente. Tu cita fue confirmada. Gracias por escribirnos.</p></div></div></section>
         <section class="benefits-matrix reveal-up"><div class="section-title centered-title"><span class="eyebrow">Caracteristicas premium</span><h2>Automatizacion completa para vender mas citas.</h2><p>Cada modulo fue pensado para reducir trabajo manual y aumentar la velocidad de respuesta.</p></div><div class="benefit-grid pro-grid">${landingBenefit('Agenda automatica', 'Reservas con horarios disponibles, estados y control diario, semanal o mensual.')}${landingBenefit('WhatsApp IA', 'Conversaciones naturales que capturan nombre, telefono, motivo y horario.')}${landingBenefit('Pacientes', 'Base centralizada con busqueda, historial y datos de contacto.')}${landingBenefit('Recordatorios', 'Mensajes automaticos para reducir ausencias y llamadas repetidas.')}${landingBenefit('Dashboard', 'Metricas claras para entender citas, pacientes, mensajes y actividad.')}${landingBenefit('Reportes', 'Vista ejecutiva para saber que servicios generan mas demanda.')}${landingBenefit('Cobros', 'Estructura preparada para Stripe o PayPal cuando actives pagos reales.')}${landingBenefit('Estadisticas', 'Indicadores visuales para tomar mejores decisiones cada semana.')}</div></section>
 
-        <section class="testimonials-section reveal-up"><div class="section-title centered-title"><span class="eyebrow">Confianza</span><h2>Clinicas que ya atienden mas rapido.</h2></div><div class="testimonial-grid">${testimonial('Dra. Camila Torres', 'Directora Clinica Aurora', 'DentalBot Pro nos dio una imagen mucho mas profesional y redujo llamadas repetitivas desde la primera semana.')}${testimonial('Dr. Mateo Rivas', 'Ortodoncia Rivas', 'El bot agenda pacientes mientras estamos atendiendo. La experiencia se siente moderna y confiable.')}${testimonial('Lic. Sofia Vargas', 'Gerente Smile Center', 'Ahora tenemos control de agenda, pacientes y mensajes en un solo panel. Parece una plataforma enterprise.')}</div></section>
-        <section class="faq-section" id="faq"><div class="section-title centered-title reveal-up"><span class="eyebrow">FAQ</span><h2>Preguntas frecuentes</h2></div><div class="faq-list reveal-up delay-1">${faqItem('Puedo usarlo sin integrar pagos reales?', 'Si. La app ya incluye estructura de pagos placeholder y puedes conectar Stripe o PayPal cuando tengas credenciales.')}${faqItem('El bot guarda citas automaticamente?', 'Si. El flujo demo captura datos, muestra horarios y guarda la cita en la base local.')}${faqItem('Funciona en celular?', 'Si. La landing, dashboard, agenda, pacientes y chat son responsive para movil, tablet y desktop.')}${faqItem('Puedo cancelar cuando quiera?', 'Si. No hay contratos largos. El plan mensual esta pensado para ser simple y flexible.')}</div></section>
-      </main><footer class="premium-footer" id="contacto"><div><strong>DentalBot Pro</strong><p>Automatizacion inteligente para cl&iacute;nicas dentales modernas.</p></div><nav><strong>Producto</strong><a>Bot IA</a><a>Agenda</a><a>Pacientes</a><a>Dashboard</a></nav><nav><strong>Empresa</strong><a>Blog</a><a>Documentacion</a><a>Politicas</a><a>Planes</a></nav><nav><strong>Contacto</strong><a>WhatsApp</a><a>Correo</a><a>Soporte</a><a>Redes sociales</a></nav></footer><div class="payment-modal hidden" id="paymentModal"><form class="payment-box glass-panel" id="paymentForm"><button type="button" class="payment-close" id="closePaymentModal">Cerrar</button><span class="popular-badge">Plan mensual</span><h3>Activar DentalBot Pro</h3><div class="payment-price"><strong>US$9.99</strong><span>/ mes</span></div><p>Ingresa los datos de tu tarjeta para continuar. Este formulario esta preparado para conectar Stripe o PayPal; no guarda datos reales.</p><label class="field"><span>Nombre en la tarjeta</span><input name="cardName" required placeholder="Dra. Ana Perez"></label><label class="field"><span>Numero de tarjeta</span><input name="cardNumber" inputmode="numeric" maxlength="19" required placeholder="4242 4242 4242 4242"></label><div class="payment-row"><label class="field"><span>Vence</span><input name="cardExpiry" required placeholder="MM/AA"></label><label class="field"><span>CVC</span><input name="cardCvc" inputmode="numeric" maxlength="4" required placeholder="123"></label></div><button class="btn btn-primary" type="submit">Pagar US$9.99 y crear cuenta</button><small>Pago seguro. Cancela cuando quieras.</small></form></div><div class="video-modal hidden" id="demoVideoModal"><div class="video-box glass-panel"><button id="closeDemoVideo">Cerrar</button><div class="play-circle">Play</div><h3>Demostracion DentalBot Pro</h3><p>Video placeholder listo para conectar tu demo comercial.</p></div></div>
+        <section class="testimonials-section reveal-up"><div class="section-title centered-title"><span class="eyebrow">Confianza</span><h2>Clinicas que ya atienden mas rapido.</h2></div><div class="testimonial-grid">${testimonial('Dra. Camila Torres', 'Directora Clinica Aurora', 'DentAce nos dio una imagen mucho mas profesional y redujo llamadas repetitivas desde la primera semana.')}${testimonial('Dr. Mateo Rivas', 'Ortodoncia Rivas', 'El bot agenda pacientes mientras estamos atendiendo. La experiencia se siente moderna y confiable.')}${testimonial('Lic. Sofia Vargas', 'Gerente Smile Center', 'Ahora tenemos control de agenda, pacientes y mensajes en un solo panel. Parece una plataforma enterprise.')}</div></section>
+        
+      </main><div class="payment-modal hidden" id="paymentModal"><form class="payment-box glass-panel" id="paymentForm"><button type="button" class="payment-close" id="closePaymentModal">Cerrar</button><span class="popular-badge">Plan mensual</span><h3>Activar DentAce</h3><div class="payment-price"><strong>US$9.99</strong><span>/ mes</span></div><p>Ingresa los datos de tu tarjeta para continuar. Este formulario esta preparado para conectar Stripe o PayPal; no guarda datos reales.</p><label class="field"><span>Nombre en la tarjeta</span><input name="cardName" required placeholder="Dra. Ana Perez"></label><label class="field"><span>Numero de tarjeta</span><input name="cardNumber" inputmode="numeric" maxlength="19" required placeholder="4242 4242 4242 4242"></label><div class="payment-row"><label class="field"><span>Vence</span><input name="cardExpiry" required placeholder="MM/AA"></label><label class="field"><span>CVC</span><input name="cardCvc" inputmode="numeric" maxlength="4" required placeholder="123"></label></div><button class="btn btn-primary" type="submit">Pagar US$9.99 y crear cuenta</button><small>Pago seguro. Cancela cuando quieras.</small></form></div><div class="video-modal hidden" id="demoVideoModal"><div class="video-box glass-panel"><button id="closeDemoVideo">Cerrar</button><div class="play-circle">Play</div><h3>Demostracion DentAce</h3><p>Video placeholder listo para conectar tu demo comercial.</p></div></div>
     </div>`;
   bindRoutes();
   landingInteractions();
@@ -200,13 +198,13 @@ function renderAuth(mode) {
     <main class="auth-layout premium-login-layout">
       <div class="login-topbar-float">
         <button type="button" class="login-back-home" data-route="landing" aria-label="Volver al inicio"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg></span> Volver al inicio</button>
-        <div class="login-topbar-brand"><span class="brand-mark">DB</span><div><strong>DentalBot Pro</strong><small>Conoce todas las funciones de la plataforma</small></div></div>
+        <div class="login-topbar-brand"><span class="brand-mark">DA</span><div><strong>DentAce</strong><small>Conoce todas las funciones de la plataforma</small></div></div>
       </div>
-      <div class="login-loader" aria-hidden="true"><div><span class="brand-mark">DB</span><strong>DentalBot Pro</strong><i></i></div></div>
+      <div class="login-loader" aria-hidden="true"><div><span class="brand-mark">DA</span><strong>DentAce</strong><i></i></div></div>
       <div class="login-particles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       <section class="premium-login-card">
         <aside class="premium-login-side">
-          <button class="brand premium-login-brand" data-route="landing"><span class="brand-mark">DB</span><span>DentalBot Pro</span></button>
+          <button class="brand premium-login-brand" data-route="landing"><span class="brand-mark">DA</span><span>DentAce</span></button>
           <span class="login-kicker">AI Dental Automation</span>
           <h1>${isRegister ? "Crea tu cl&iacute;nica digital" : "Accede a tu panel de control"}</h1>
           <p>Software premium para automatizar citas, pacientes y respuestas con inteligencia artificial.</p>
@@ -225,21 +223,22 @@ function renderAuth(mode) {
           <div class="premium-form-head">
             <span class="login-kicker">Acceso seguro</span>
             <h2>${isRegister ? "Crear cuenta" : "Iniciar sesion"}</h2>
-            <p>${isRegister ? "Configura tu cl&iacute;nica y empieza a automatizar hoy." : "Bienvenido de vuelta, odontologo."}</p>
+            <p>${isRegister ? "Configura tu cl&iacute;nica. Te enviaremos un correo para verificar la cuenta." : "Bienvenido de vuelta, odontologo."}</p>
           </div>
           <div id="formMessage"></div>
           <div class="form-grid premium-auth-grid">
             ${isRegister ? '<label class="field"><span>Nombre de la cl&iacute;nica</span><input name="clinicName" required placeholder="Clinica Dental Sonrisa"></label><label class="field"><span>Nombre del dentista</span><input name="dentistName" required placeholder="Dra. Ana Perez"></label><label class="field"><span>Telefono</span><input name="phone" required placeholder="809-000-0000"></label>' : ''}
-            <label class="field ${isRegister ? '' : 'span-2'}"><span>Correo electronico</span><input type="email" name="email" required placeholder="correo@cl&iacute;nica.com" value="${isRegister ? '' : 'demo@dentalbotpro.com'}"></label>
+            <label class="field ${isRegister ? '' : 'span-2'}"><span>Correo electronico</span><input type="email" name="email" required placeholder="correo@cl&iacute;nica.com" value="${isRegister ? '' : 'demo@dentace.com'}"></label>
             <label class="field ${isRegister ? '' : 'span-2'}"><span>Contrasena</span><input type="password" name="password" required minlength="6" placeholder="Minimo 6 caracteres" value="${isRegister ? '' : 'demo1234'}"></label>
+            ${isRegister ? '<label class="field"><span>Confirmar contrasena</span><input type="password" name="confirmPassword" required minlength="6" placeholder="Repite tu contrasena"></label>' : ''}
           </div>
-          <div class="login-options"><label><input type="checkbox" checked> Recordarme</label><a>Olvidaste tu contrasena?</a></div>
+          <div class="login-options"><label><input type="checkbox" checked> Recordarme</label><a href="#forgot-password">Olvidaste tu contrasena?</a></div>
           <div class="hero-actions premium-login-actions">
             <button class="btn btn-primary" type="submit">${isRegister ? "Crear cuenta" : "Entrar al dashboard"}</button>
             <button class="btn btn-secondary" type="button" data-route="${isRegister ? 'login' : 'register'}">${isRegister ? "Ya tengo cuenta" : "Crear cuenta nueva"}</button>
           </div>
-          <p class="social-proof">Mas de 3,000 cl&iacute;nicas confian en DentalBot Pro.</p>
-          <small class="auth-copy">? 2026 DentalBot Pro. Todos los derechos reservados.</small>
+          <p class="social-proof">Mas de 3,000 cl&iacute;nicas confian en DentAce.</p>
+          <small class="auth-copy">? 2026 DentAce. Todos los derechos reservados.</small>
         </form>
       </section>
     </main>`;
@@ -251,9 +250,16 @@ function renderAuth(mode) {
     const payload = Object.fromEntries(new FormData(event.currentTarget).entries());
     try {
       if (isRegister) {
+        if (payload.password !== payload.confirmPassword) {
+          message.innerHTML = '<div class="alert error">Las contrasenas no coinciden</div>';
+          return;
+        }
+        delete payload.confirmPassword;
         const data = await api("/api/auth/register", { method: "POST", body: JSON.stringify(payload) });
         state.clinic = data.clinic;
         localStorage.setItem("dentalbot_clinic", JSON.stringify(data.clinic));
+        localStorage.setItem("dentalbot_register_message", data.message || "Cuenta creada. Revisa tu correo para verificarla.");
+        localStorage.setItem("dentalbot_register_email", payload.email);
         setRoute("welcome");
       } else {
         const data = await api("/api/auth/login", { method: "POST", body: JSON.stringify(payload) });
@@ -268,10 +274,72 @@ function renderAuth(mode) {
 }
 
 function renderWelcome() {
-  app.innerHTML = `<main class="auth-layout"><section class="card auth-form" style="max-width:720px"><div class="brand"><span class="brand-mark">DB</span><span>DentalBot Pro</span></div><h1>Bienvenido a DentalBot Pro</h1><p class="muted">Tu cl&iacute;nica ya esta lista para automatizar citas y responder pacientes.</p><div class="alert">Estado actual: pendiente de pago. La estructura de pago esta preparada para conectar Stripe o PayPal.</div><div class="hero-actions"><button class="btn btn-primary" data-route="login">Iniciar sesion</button><button class="btn btn-secondary" data-route="landing">Volver al sitio</button></div></section></main>`;
+  const registerMessage = localStorage.getItem("dentalbot_register_message") || "Cuenta creada. Revisa tu correo para verificarla antes de iniciar sesion.";
+  const registerEmail = localStorage.getItem("dentalbot_register_email") || "";
+  app.innerHTML = `<main class="auth-layout"><section class="card auth-form" style="max-width:720px"><div class="brand"><span class="brand-mark">DA</span><span>DentAce</span></div><h1>Verifica tu correo</h1><p class="muted">Te enviamos un codigo de 6 digitos a tu Gmail.</p><div class="alert">${registerMessage}</div><form id="verifyCodeForm" class="form-grid"><label class="field span-2"><span>Correo electronico</span><input type="email" name="email" required value="${registerEmail}"></label><label class="field span-2"><span>Codigo de verificacion</span><input name="code" required inputmode="numeric" maxlength="6" placeholder="123456"></label><div id="verifyMsg" class="span-2"></div><div class="hero-actions span-2"><button class="btn btn-primary" type="submit">Verificar correo</button><button class="btn btn-secondary" type="button" id="resendCodeBtn">Reenviar codigo</button><button class="btn btn-secondary" type="button" data-route="login">Ir al login</button></div></form><div class="alert">Tambien puedes abrir el enlace de verificacion enviado al correo.</div></section></main>`;
   bindRoutes();
+  document.querySelector("#verifyCodeForm")?.addEventListener("submit", async event => {
+    event.preventDefault();
+    const msg = document.querySelector("#verifyMsg");
+    const payload = Object.fromEntries(new FormData(event.currentTarget).entries());
+    try {
+      const data = await api("/api/auth/verify-email-code", { method: "POST", body: JSON.stringify(payload) });
+      localStorage.setItem("dentalbot_register_message", data.message || "Correo verificado.");
+      msg.innerHTML = `<div class="alert">${data.message}</div>`;
+      setTimeout(() => setRoute("login"), 900);
+    } catch (error) {
+      msg.innerHTML = `<div class="alert error">${error.message}</div>`;
+    }
+  });  document.querySelector("#resendCodeBtn")?.addEventListener("click", async () => {
+    const msg = document.querySelector("#verifyMsg");
+    const email = document.querySelector("#verifyCodeForm input[name='email']")?.value || "";
+    try {
+      const data = await api("/api/auth/resend-verification-code", { method: "POST", body: JSON.stringify({ email }) });
+      msg.innerHTML = `<div class="alert">${data.message}</div>`;
+    } catch (error) {
+      msg.innerHTML = `<div class="alert error">${error.message}</div>`;
+    }
+  });
 }
 
+function renderForgotPassword() {
+  app.innerHTML = `<main class="auth-layout"><section class="card auth-form" style="max-width:680px"><div class="brand"><span class="brand-mark">DA</span><span>DentAce</span></div><h1>Restablecer contrasena</h1><p class="muted">Escribe tu correo y te enviaremos un enlace para crear una nueva contrasena.</p><form id="forgotForm" class="form-grid"><label class="field span-2"><span>Correo electronico</span><input type="email" name="email" required placeholder="correo@clinica.com"></label><div id="forgotMsg" class="span-2"></div><div class="hero-actions span-2"><button class="btn btn-primary" type="submit">Enviar enlace</button><button class="btn btn-secondary" type="button" data-route="login">Volver al login</button></div></form></section></main>`;
+  bindRoutes();
+  document.querySelector("#forgotForm")?.addEventListener("submit", async event => {
+    event.preventDefault();
+    const msg = document.querySelector("#forgotMsg");
+    const payload = Object.fromEntries(new FormData(event.currentTarget).entries());
+    try {
+      const data = await api("/api/auth/forgot-password", { method: "POST", body: JSON.stringify(payload) });
+      msg.innerHTML = `<div class="alert">${data.message}</div>`;
+    } catch (error) {
+      msg.innerHTML = `<div class="alert error">${error.message}</div>`;
+    }
+  });
+}
+
+function renderResetPassword() {
+  const token = new URLSearchParams((location.hash.split("?")[1] || "")).get("token") || "";
+  app.innerHTML = `<main class="auth-layout"><section class="card auth-form" style="max-width:680px"><div class="brand"><span class="brand-mark">DA</span><span>DentAce</span></div><h1>Nueva contrasena</h1><p class="muted">Crea una contrasena nueva para tu cuenta.</p><form id="resetForm" class="form-grid"><input type="hidden" name="token" value="${token}"><label class="field span-2"><span>Nueva contrasena</span><input type="password" name="password" required minlength="6"></label><label class="field span-2"><span>Confirmar contrasena</span><input type="password" name="confirmPassword" required minlength="6"></label><div id="resetMsg" class="span-2"></div><div class="hero-actions span-2"><button class="btn btn-primary" type="submit">Guardar contrasena</button><button class="btn btn-secondary" type="button" data-route="login">Volver al login</button></div></form></section></main>`;
+  bindRoutes();
+  document.querySelector("#resetForm")?.addEventListener("submit", async event => {
+    event.preventDefault();
+    const msg = document.querySelector("#resetMsg");
+    const payload = Object.fromEntries(new FormData(event.currentTarget).entries());
+    if (payload.password !== payload.confirmPassword) {
+      msg.innerHTML = '<div class="alert error">Las contrasenas no coinciden</div>';
+      return;
+    }
+    delete payload.confirmPassword;
+    try {
+      const data = await api("/api/auth/reset-password", { method: "POST", body: JSON.stringify(payload) });
+      msg.innerHTML = `<div class="alert">${data.message}</div>`;
+      setTimeout(() => setRoute("login"), 900);
+    } catch (error) {
+      msg.innerHTML = `<div class="alert error">${error.message}</div>`;
+    }
+  });
+}
 async function loadPrivateData() {
   if (!state.token) return;
   const [dashboard, appointments, patients, bot] = await Promise.all([
@@ -289,41 +357,41 @@ async function loadPrivateData() {
 function appShell(content, title = "Dashboard") {
   const clinicName = state.clinic?.clinicName || "Cl&iacute;nica dental";
   const dentistName = state.clinic?.dentistName || "Doctor";
-  const initials = clinicName.replace(/&[^;]+;/g, "").split(" ").filter(Boolean).map(part => part[0]).slice(0, 2).join("").toUpperCase() || "DB";
+  const initials = clinicName.replace(/&[^;]+;/g, "").split(" ").filter(Boolean).map(part => part[0]).slice(0, 2).join("").toUpperCase() || "DA";
+  const metrics = state.dashboard?.metrics || {};
+  const today = todayLocalISO();
+  const todayAppointments = (state.appointments || []).filter(item => item.date === today).sort((a, b) => String(a.time).localeCompare(String(b.time)));
+  const todaySummary = {
+    scheduled: metrics.todayAppointments || todayAppointments.length || 0,
+    pending: metrics.pendingAppointments || (state.appointments || []).filter(item => item.status === "pendiente").length || 0,
+    messages: metrics.messagesReceived || 0,
+    occupancy: Math.min(99, Math.max(0, Math.round(((metrics.todayAppointments || todayAppointments.length || 0) / 10) * 100) || 87))
+  };
   app.innerHTML = `
     <div class="app-shell premium-app-shell">
-      <aside class="sidebar premium-sidebar">
+      <aside class="sidebar premium-sidebar restored-sidebar-menu">
         <div class="sidebar-clinic-card">
           <div class="clinic-avatar">${initials}</div>
           <div><strong>${clinicName}</strong><span>${dentistName}</span></div>
-        </div>
-        <div class="sidebar-plan-card">
-          <span class="status confirmada">Bot IA activo</span>
-          <strong>Plan US$9.99</strong>
-          <small>DentalBot Pro v1.0</small>
         </div>
         <nav class="side-nav premium-side-nav">
           ${navButton("dashboard", `${icons.chart} Dashboard`)}
           ${navButton("agenda", `${icons.calendar} Citas`)}
           ${navButton("calendar", `${icons.calendar} Calendario`)}
-          ${navButton("bot", `${icons.bot} Bot IA`)}
-          ${navButton("services", `${icons.services} Servicios`)}
+          ${navButton("clinical-history", `${icons.history} Historial clinico`)}
+          ${navButton("whatsapp", `${icons.phone} WhatsApp`)}
           ${navButton("settings", `${icons.settings} Configuracion`)}
+          ${navButton("license", `${icons.pay} Licencia`)}
         </nav>
         <div class="sidebar-system-card"><span></span><div><strong>Sincronizado</strong><small>Servidor activo</small></div></div>
-        <button class="btn btn-ghost" style="width:100%;margin-top:18px" id="logoutBtn">Salir</button>
+        <button class="btn btn-ghost restored-sidebar-logout" id="logoutBtn">Salir</button>
       </aside>
       <main class="main premium-main">
         <header class="app-header premium-app-header">
-          <div class="header-title-block"><span class="header-kicker">DentalBot OS</span><h1>${title}</h1><div class="muted">${clinicName}</div></div>
-          <label class="smart-search"><span>Buscar</span><input aria-label="Buscador inteligente" placeholder="Pacientes, citas, mensajes, IA"></label>
+          <div class="header-title-block"><span class="header-kicker">DentAce OS</span><h1>${title}</h1><div class="muted">${clinicName}</div></div>
           <div class="premium-header-actions">
-            <button class="icon-action" title="Actualizar">?</button>
-            <button class="icon-action" title="Ayuda">?</button>
-            <button class="icon-action notification-dot" title="Notificaciones">?</button>
-            <span class="bot-online-pill">Bot IA Online</span>
             <button class="btn btn-green" id="paymentBtn">${icons.pay} Plan ${money(9.99)}</button>
-            <div class="profile-chip"><span>${initials}</span><div><strong>${dentistName}</strong><small>Perfil</small></div></div>
+            <div class="profile-chip no-avatar"><div><strong>${dentistName}</strong><small>Perfil</small></div><b aria-hidden="true">v</b></div>
           </div>
         </header>
         <section class="content premium-content">${content}</section>
@@ -340,38 +408,97 @@ Intent local: ${data.paymentIntent.id}`);
   bindAppointmentActions();
 }
 
+function sidebarTodayAgenda(appointments) {
+  if (!appointments.length) return `<div class="sidebar-empty">Sin citas para hoy</div>`;
+  return `<div class="sidebar-agenda-list">${appointments.slice(0, 3).map((apt, index) => `<div class="sidebar-agenda-item tone-${index % 3}"><i></i><div><strong>${displayTime(apt.time)}</strong><span>${apt.patientName}</span></div><b class="status ${apt.status}">${apt.status}</b></div>`).join("")}</div>`;
+}
 function navButton(route, label) {
   return `<button class="nav-btn ${state.route === route ? "active" : ""}" data-route="${route}">${label}</button>`;
 }
 
 function renderDashboard() {
   const data = state.dashboard || { metrics: {}, upcoming: [], planStatus: "pendiente" };
-  const m = data.metrics;
+  const m = data.metrics || {};
+  const today = new Date();
+  const todayText = today.toLocaleDateString("es-DO", { day: "numeric", month: "long", year: "numeric" });
+  const dayText = today.toLocaleDateString("es-DO", { weekday: "long" });
+  const occupation = Math.min(99, Math.max(0, Math.round(((m.todayAppointments || 0) / 10) * 100) || 87));
   appShell(`
-    <section class="dashboard-hero-panel">
-      <div><span class="header-kicker">Resumen inteligente</span><h2>Tu clinica en tiempo real</h2><p>KPIs, actividad, agenda e IA en una sola vista ejecutiva.</p></div>
-    </section>
-    <div class="metric-grid premium-metric-grid">
-      ${metric("Total de pacientes", m.totalPatients || 0)}
-      ${metric("Citas de hoy", m.todayAppointments || 0)}
-      ${metric("Citas pendientes", m.pendingAppointments || 0)}
-      ${metric("Mensajes recibidos", m.messagesReceived || 0)}
-    </div>
-    <div class="dashboard-insight-grid">
-      <article class="card panel premium-chart-panel">
-        <div class="panel-head"><h2>Rendimiento semanal</h2><span class="status confirmada">Sincronizado</span></div>
-        <div class="dashboard-chart weekly-chart"><div><i></i><span>Lun</span></div><div><i></i><span>Mar</span></div><div><i></i><span>Mie</span></div><div><i></i><span>Jue</span></div><div><i></i><span>Vie</span></div><div><i></i><span>Sab</span></div></div>
-      </article>
-    </div>
-    <div class="dashboard-grid premium-dashboard-grid">
-      <article class="card panel">
-        <div class="panel-head"><h2>Proximas citas</h2><button class="btn btn-secondary" data-route="agenda">Ver agenda</button></div>
-        ${appointmentsTable(data.upcoming || [])}
-      </article>
+    <div class="operating-dashboard">
+      <section class="os-hero-panel">
+        <div>
+          <span class="header-kicker">Bienvenida, ${state.clinic?.dentistName || "Doctor"}</span>
+          <h2>Tu clinica en tiempo real</h2>
+          <p>KPIs, actividad, agenda e IA en una sola vista ejecutiva.</p>
+        </div>
+        <div class="os-hero-widgets">
+          <div class="os-mini-widget"><span class="os-widget-icon">${icons.calendar}</span><strong>${todayText}</strong><small>${capitalize(dayText)}</small><b>${displayTime(`${String(today.getHours()).padStart(2, "0")}:${String(today.getMinutes()).padStart(2, "0")}`)}</b></div>
+          <div class="os-mini-widget whatsapp-widget"><span class="os-widget-icon">${icons.phone}</span><strong>WhatsApp</strong><small>Conectado</small><b>Activo</b></div>
+        </div>
+      </section>
+
+      <div class="os-metric-grid">
+        ${dashboardMetric("Total de pacientes", m.totalPatients || state.patients.length || 0, "+2 hoy", "+15%", "vs ayer", "patients")}
+        ${dashboardMetric("Citas de hoy", m.todayAppointments || 0, (m.todayAppointments || 0) ? "Programadas" : "Sin citas programadas", "0%", "vs ayer", "appointments")}
+        ${dashboardMetric("Citas pendientes", m.pendingAppointments || 0, "Por confirmar", "+33%", "vs ayer", "pending")}
+        ${dashboardMetric("Mensajes recibidos", m.messagesReceived || 0, "Sin leer", "+40%", "vs ayer", "messages")}
+      </div>
+
+      <div class="os-dashboard-grid">
+        <article class="card panel os-chart-panel">
+          <div class="panel-head"><div><h2>Rendimiento semanal</h2><div class="chart-legend"><span class="dot blue"></span>Citas <span class="dot green"></span>Mensajes</div></div><button class="btn btn-secondary" type="button">Esta semana</button></div>
+          ${weeklyPerformanceChart()}
+          <div class="os-chart-stats"><span><strong>73</strong>Total citas</span><span><strong>${occupation}%</strong>Ocupacion promedio</span><span><strong>${m.totalPatients || state.patients.length || 0}</strong>Nuevos pacientes</span><span><strong>${m.messagesReceived || 0}</strong>Mensajes recibidos</span></div>
+        </article>
+
+        <article class="card panel os-ai-panel">
+          <div class="panel-head"><div><h2>DentAce IA</h2><p class="muted">Tu asistente inteligente</p></div><span class="ai-bot-mark">IA</span></div>
+          <div class="ai-brief-card">
+            <div class="ai-brief-copy">
+              <p><b>Buenos dias ${state.clinic?.dentistName || "Doctor"}.</b></p>
+              <ul>
+                <li>Tienes <strong>${m.todayAppointments || 0}</strong> citas programadas para hoy.</li>
+                <li><strong>${m.pendingAppointments || 0}</strong> pacientes estan esperando confirmacion.</li>
+                <li>La ocupacion del dia es del <strong>${occupation}%</strong>.</li>
+                <li>Se recomienda abrir 2 horarios adicionales para manana.</li>
+              </ul>
+              <button class="btn btn-secondary" type="button">Ver sugerencias</button>
+            </div>
+            <div class="ai-robot" aria-hidden="true"><span></span><i></i></div>
+          </div>
+        </article>
+
+        <article class="card panel os-appointments-panel">
+          <div class="panel-head"><h2>Proximas citas</h2><button class="btn btn-secondary" data-route="agenda">Ver agenda completa</button></div>
+          ${appointmentsTable(data.upcoming || [])}
+        </article>
+
+        <article class="card panel os-summary-panel">
+          <div class="panel-head"><h2>Resumen de hoy</h2></div>
+          <div class="summary-list"><span>Citas programadas <strong>${m.todayAppointments || 0}</strong></span><span>Confirmadas <strong>${Math.max(0, (m.todayAppointments || 0) - (m.pendingAppointments || 0))}</strong></span><span>Pendientes <strong>${m.pendingAppointments || 0}</strong></span><span>Canceladas <strong>0</strong></span></div>
+          <div class="occupancy-ring" style="--value:${occupation}"><strong>${occupation}%</strong></div>
+          <p class="muted">Ocupacion del dia</p>
+        </article>
+      </div>
     </div>
   `);
 }
 
+function capitalize(value) {
+  return String(value || "").charAt(0).toUpperCase() + String(value || "").slice(1);
+}
+
+function dashboardMetric(label, value, caption, trend, trendLabel, tone) {
+  const iconMap = { patients: icons.patients, appointments: icons.calendar, pending: icons.calendar, messages: icons.bot };
+  return `<article class="card metric os-metric os-metric-${tone}"><div class="metric-icon">${iconMap[tone] || icons.chart}</div><div><span>${label}</span><strong>${value}</strong><small>${caption}</small></div><p><b>${trend}</b><em>${trendLabel}</em></p></article>`;
+}
+
+function weeklyPerformanceChart() {
+  const days = [
+    ["Lun", 8, 12], ["Mar", 12, 15], ["Mie", 9, 11], ["Jue", 18, 20], ["Vie", 14, 16], ["Sab", 25, 28], ["Dom", 7, 9]
+  ];
+  return `<div class="os-weekly-chart">${days.map(([day, citas, mensajes]) => `<div class="week-day"><div class="bar-pair"><span style="--h:${citas * 3}px" data-value="${citas}"></span><span style="--h:${mensajes * 3}px" data-value="${mensajes}"></span></div><b>${day}</b></div>`).join("")}</div>`;
+}
 function metric(label, value) {
   return `<article class="card metric"><span>${label}</span><strong>${value}</strong></article>`;
 }
@@ -386,7 +513,7 @@ function appointmentsTable(appointments) {
           <tr>
             <td><strong>${apt.patientName}</strong><span class="phone-field">${apt.phone}</span></td>
             <td>${apt.date}</td>
-            <td>${apt.time}</td>
+            <td>${displayTime(apt.time)}</td>
             <td>${apt.reason}</td>
             <td><span class="status ${apt.status}">${apt.status}</span></td>
             <td><div class="row-actions"><button class="btn btn-green btn-complete" data-complete-apt="${apt.id}">Finalizar</button><button class="btn btn-secondary" data-edit-apt="${apt.id}">${icons.edit}</button></div></td>
@@ -448,40 +575,116 @@ function showToast(message, type = "info") {
 }
 
 function renderAgenda() {
-  const filtered = filterAppointmentsByView(state.appointments);
+  const filtered = upcomingAttendingAppointments(state.appointments);
+  const today = todayLocalISO();
+  const patientCount = new Set(filtered.map(item => item.phone || item.patientName)).size;
   appShell(`
-    <div class="toolbar">
-      <div class="calendar-tabs">
-        <button class="${state.calendarView === "daily" ? "active" : ""}" data-view="daily">Diario</button>
-        <button class="${state.calendarView === "weekly" ? "active" : ""}" data-view="weekly">Semanal</button>
-        <button class="${state.calendarView === "monthly" ? "active" : ""}" data-view="monthly">Mensual</button>
+    <section class="appointments-os-view">
+      <div class="appointments-actionbar">
+        <button class="btn btn-primary appointment-create-btn" id="newAppointment">+ Crear cita</button>
       </div>
-      <button class="btn btn-primary" id="newAppointment">${icons.calendar} Crear cita</button>
-    </div>
-    <article class="card panel">
-      <div class="panel-head"><h2>Agenda ${state.calendarView === "daily" ? "diaria" : state.calendarView === "weekly" ? "semanal" : "mensual"}</h2><span class="muted">${filtered.length} citas visibles</span></div>
-      ${appointmentsTable(filtered)}
-    </article>
+
+      <section class="appointments-hero-card">
+        <div>
+          <h2>Clientes que asistiran</h2>
+          <p>Consulta las proximas citas programadas y gestiona la atencion de tus pacientes.</p>
+        </div>
+        <div class="appointments-hero-stats">
+          ${appointmentStat(icons.calendar, filtered.length, "Citas proximas")}
+          ${appointmentStat(icons.patients, patientCount, "Pacientes")}
+        </div>
+      </section>
+
+      <div class="appointments-toolbar-row">
+        <label class="appointments-search"><span>${icons.search}</span><input id="appointmentSearch" placeholder="Buscar paciente, motivo o telefono..."></label>
+        <label class="appointments-date-filter"><span>${icons.calendar}</span><select id="appointmentDateFilter"><option value="all">Todas las fechas</option>${appointmentDateOptions(filtered)}</select></label>
+      </div>
+
+      <article class="appointments-table-card">
+        <div id="agendaTableWrap">${agendaAppointmentsTable(filtered)}</div>
+      </article>
+    </section>
   `, "Agenda de citas");
-  document.querySelectorAll("[data-view]").forEach(btn => btn.addEventListener("click", () => {
-    state.calendarView = btn.dataset.view;
-    renderAgenda();
-  }));
+
+  const renderFilteredAgenda = () => {
+    const q = document.querySelector("#appointmentSearch")?.value.trim().toLowerCase() || "";
+    const date = document.querySelector("#appointmentDateFilter")?.value || "all";
+    const list = filtered.filter(item => {
+      const matchesText = [item.patientName, item.phone, item.reason, item.status].join(" ").toLowerCase().includes(q);
+      const matchesDate = date === "all" || item.date === date;
+      return matchesText && matchesDate;
+    });
+    document.querySelector("#agendaTableWrap").innerHTML = agendaAppointmentsTable(list);
+    bindAppointmentActions();
+    bindAgendaEditButtons();
+  };
+
   document.querySelector("#newAppointment").addEventListener("click", () => openAppointmentModal());
+  document.querySelector("#appointmentSearch").addEventListener("input", renderFilteredAgenda);
+  document.querySelector("#appointmentDateFilter").addEventListener("change", renderFilteredAgenda);
+  bindAgendaEditButtons();
+}
+
+function bindAgendaEditButtons() {
   document.querySelectorAll("[data-edit-apt]").forEach(btn => btn.addEventListener("click", () => {
     const apt = state.appointments.find(item => item.id === btn.dataset.editApt);
     openAppointmentModal(apt);
   }));
 }
 
-function filterAppointmentsByView(appointments) {
-  const now = new Date();
-  const today = now.toISOString().slice(0, 10);
-  const end = new Date(now);
-  if (state.calendarView === "daily") return appointments.filter(item => item.date === today && item.status === "confirmada");
-  if (state.calendarView === "weekly") end.setDate(now.getDate() + 7);
-  else end.setMonth(now.getMonth() + 1);
-  return appointments.filter(item => item.date >= today && item.date <= end.toISOString().slice(0, 10) && item.status === "confirmada");
+function appointmentStat(icon, value, label) {
+  return `<article><span>${icon}</span><strong>${value}</strong><small>${label}</small></article>`;
+}
+
+function appointmentDateOptions(appointments) {
+  return Array.from(new Set(appointments.map(item => item.date))).map(date => `<option value="${date}">${formatShortDate(date)}</option>`).join("");
+}
+
+function formatShortDate(date) {
+  return dateFromISO(date).toLocaleDateString("es-DO", { day: "2-digit", month: "short", year: "numeric" }).replace(".", "");
+}
+
+function appointmentWeekday(date) {
+  const day = dateFromISO(date).toLocaleDateString("es-DO", { weekday: "long" });
+  return capitalize(day);
+}
+
+function patientInitials(name) {
+  return String(name || "Paciente").split(" ").filter(Boolean).map(part => part[0]).slice(0, 2).join("").toUpperCase() || "P";
+}
+
+function reasonBadge(reason) {
+  const text = String(reason || "Consulta");
+  const normalized = text.toLowerCase();
+  const label = normalized.includes("blanque") ? "Procedimiento" : normalized.includes("consulta") ? "Consulta" : "Cita";
+  return `<span class="reason-badge">${label}</span>`;
+}
+
+function agendaAppointmentsTable(appointments) {
+  if (!appointments.length) return `<div class="alert">No hay citas para mostrar.</div>`;
+  return `
+    <table class="appointments-os-table">
+      <thead><tr><th>Paciente</th><th>Fecha</th><th>Hora</th><th>Motivo</th><th>Estado</th><th>Acciones</th></tr></thead>
+      <tbody>
+        ${appointments.map(apt => `
+          <tr>
+            <td><div class="agenda-patient"><span class="agenda-avatar">${patientInitials(apt.patientName)}</span><div><strong>${apt.patientName}</strong><small>${apt.phone} <b>WhatsApp</b></small></div></div></td>
+            <td><div class="agenda-date"><span>${icons.calendar}</span><div><strong>${formatShortDate(apt.date)}</strong><small>${appointmentWeekday(apt.date)}</small></div></div></td>
+            <td><div class="agenda-time"><span>${icons.history}</span><strong>${displayTime(apt.time)}</strong></div></td>
+            <td><div class="agenda-reason"><span>${icons.services}</span><div><strong>${apt.reason}</strong>${reasonBadge(apt.reason)}</div></div></td>
+            <td><span class="status ${apt.status}">${apt.status}</span></td>
+            <td><div class="agenda-actions"><button class="btn btn-green btn-complete" data-complete-apt="${apt.id}">Finalizar</button><button class="btn btn-secondary icon-only" data-edit-apt="${apt.id}">${icons.edit}</button><button class="btn btn-secondary icon-only" type="button">...</button></div></td>
+          </tr>
+        `).join("")}
+      </tbody>
+    </table>
+  `;
+}
+function upcomingAttendingAppointments(appointments) {
+  const today = todayLocalISO();
+  return appointments
+    .filter(item => item.date >= today && item.status === "confirmada")
+    .sort((a, b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`));
 }
 
 function openAppointmentModal(appointment = null) {
@@ -596,6 +799,192 @@ function openPatientModal(patient = null) {
   });
 }
 
+function getClinicalHistoryPatients() {
+  const map = new Map();
+  const keyFor = item => String(item.patientId || item.id || item.phone || item.patientName || item.name || "").toLowerCase();
+
+  state.patients.forEach(patient => {
+    const key = keyFor(patient);
+    if (!key) return;
+    map.set(key, {
+      id: patient.id,
+      name: patient.name,
+      phone: patient.phone || "Sin telefono",
+      email: patient.email || "Sin correo",
+      notes: patient.notes || "",
+      appointments: []
+    });
+  });
+
+  state.appointments.forEach(appointment => {
+    const existingKey = Array.from(map.keys()).find(key => {
+      const patient = map.get(key);
+      return patient.id === appointment.patientId || (patient.phone && patient.phone === appointment.phone);
+    });
+    const key = existingKey || keyFor(appointment);
+    if (!key) return;
+    if (!map.has(key)) {
+      map.set(key, {
+        id: appointment.patientId || "",
+        name: appointment.patientName || "Paciente sin nombre",
+        phone: appointment.phone || "Sin telefono",
+        email: "Sin correo",
+        notes: "",
+        appointments: []
+      });
+    }
+    map.get(key).appointments.push(appointment);
+  });
+
+  return Array.from(map.values())
+    .map(patient => ({
+      ...patient,
+      appointments: patient.appointments.sort((a, b) => `${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`))
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function renderClinicalHistory() {
+  const patients = getClinicalHistoryPatients();
+  const withVisits = patients.filter(patient => patient.appointments.length);
+  const activePatients = patients.filter(patient => patient.appointments.some(apt => apt.date >= addDaysISO(todayLocalISO(), -30))).length;
+  const latestVisit = patients.flatMap(patient => patient.appointments).sort((a, b) => `${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`))[0];
+  appShell(`
+    <section class="clinical-os-view">
+      <section class="clinical-os-hero">
+        <div>
+          <h2>Historial clinico</h2>
+          <p>Consulta y gestiona el historial clinico de tus pacientes.</p>
+        </div>
+        <div class="clinical-os-tools">
+          <label class="clinical-os-search" for="clinicalHistorySearch">${icons.search}<input id="clinicalHistorySearch" placeholder="Buscar paciente por nombre, telefono o correo..."></label>
+          <button class="btn btn-secondary clinical-filter-btn" type="button">Filtros</button>
+        </div>
+      </section>
+
+      <div class="clinical-metric-grid">
+        ${clinicalMetric(icons.patients, patients.length, "Total de pacientes", "Registrados en el sistema", "patients")}
+        ${clinicalMetric(icons.check, activePatients, "Pacientes activos", "Con citas en los ultimos 30 dias", "active")}
+        ${clinicalMetric(icons.calendar, latestVisit ? formatShortDate(latestVisit.date) : "Sin visitas", "Ultima visita registrada", latestVisit ? displayTime(latestVisit.time) : "Pendiente", "calendar")}
+        ${clinicalMetric(icons.history, withVisits.length, "Historiales registrados", "Consultas guardadas", "history")}
+      </div>
+
+      <article class="clinical-table-card">
+        <div id="clinicalHistoryList">${clinicalHistoryTable(patients)}</div>
+      </article>
+    </section>
+  `, "Historial clinico");
+  document.querySelector("#clinicalHistorySearch").addEventListener("input", event => {
+    const q = event.target.value.trim().toLowerCase();
+    const filtered = patients.filter(patient =>
+      patient.name.toLowerCase().includes(q) ||
+      String(patient.phone || "").toLowerCase().includes(q) ||
+      String(patient.email || "").toLowerCase().includes(q)
+    );
+    document.querySelector("#clinicalHistoryList").innerHTML = clinicalHistoryTable(filtered, q);
+    bindClinicalHistoryActions(filtered);
+  });
+  bindClinicalHistoryActions(patients);
+}
+
+function clinicalMetric(icon, value, title, caption, tone) {
+  return `<article class="clinical-metric clinical-metric-${tone}"><span>${icon}</span><div><small>${title}</small><strong>${value}</strong><em>${caption}</em></div></article>`;
+}
+
+function clinicalPatientId(patient, index) {
+  const raw = String(patient.id || index + 1).replace(/\D/g, "");
+  return `ID: ${String(raw || index + 1).padStart(4, "0")}`;
+}
+
+function clinicalHistoryTable(patients, query = "") {
+  if (!patients.length) {
+    return `<div class="alert">${query ? "No aparece ningun paciente con ese nombre." : "No hay pacientes para mostrar."}</div>`;
+  }
+  return `
+    <table class="clinical-os-table">
+      <thead><tr><th>Paciente</th><th>Contacto</th><th>Ultima visita</th><th>Motivo de la ultima consulta</th><th>Citas</th><th>Acciones</th></tr></thead>
+      <tbody>
+        ${patients.map((patient, index) => {
+          const last = patient.appointments[0];
+          const canDelete = Boolean(patient.id);
+          const reason = last?.reason || "Sin consulta registrada";
+          return `<tr>
+            <td><div class="clinical-patient"><span class="clinical-avatar">${patientInitials(patient.name)}</span><div><strong>${patient.name}</strong><small>${clinicalPatientId(patient, index)}</small></div></div></td>
+            <td><div class="clinical-contact"><span>${icons.login} ${patient.email}</span><span>${icons.phone} ${patient.phone} <b>WhatsApp</b></span></div></td>
+            <td><div class="clinical-last-visit"><span>${icons.calendar}</span><div><strong>${last ? formatShortDate(last.date) : "Sin visitas"}</strong><small>${last ? displayTime(last.time) : "Pendiente"}</small></div></div></td>
+            <td><div class="clinical-reason"><span>${icons.services}</span><div><strong>${reason}</strong>${reasonBadge(reason)}</div></div></td>
+            <td><span class="clinical-count-pill">${patient.appointments.length} ${patient.appointments.length === 1 ? "cita" : "citas"}</span></td>
+            <td><div class="clinical-actions"><button class="btn btn-secondary clinical-history-btn" data-history-patient="${patient.id || patient.phone}">${icons.history} Ver historial</button><button class="btn btn-ghost clinical-delete-btn" ${canDelete ? `data-delete-patient="${patient.id}"` : "disabled"}>Eliminar</button></div></td>
+          </tr>`;
+        }).join("")}
+      </tbody>
+    </table>
+  `;
+}
+function bindClinicalHistoryActions(patients) {
+  document.querySelectorAll("[data-history-patient]").forEach(btn => btn.addEventListener("click", () => {
+    const patient = patients.find(item => (item.id || item.phone) === btn.dataset.historyPatient);
+    if (patient) openClinicalHistoryModal(patient);
+  }));
+  document.querySelectorAll("[data-delete-patient]").forEach(btn => btn.addEventListener("click", async () => {
+    const patient = patients.find(item => item.id === btn.dataset.deletePatient);
+    if (!patient) return;
+    const accepted = await confirmPatientDeletion(patient);
+    if (!accepted) return;
+    btn.disabled = true;
+    btn.textContent = "Eliminando...";
+    try {
+      await api(`/api/patients/${patient.id}`, { method: "DELETE" });
+      await loadPrivateData();
+      renderClinicalHistory();
+    } catch (error) {
+      showToast(error.message, "error");
+      btn.disabled = false;
+      btn.textContent = "Eliminar";
+    }
+  }));
+}
+
+function confirmPatientDeletion(patient) {
+  return new Promise(resolve => {
+    const modal = html(`
+      <div class="confirm-modal-backdrop">
+        <section class="confirm-modal glass-panel danger-confirm-modal">
+          <div class="confirm-icon danger-confirm-icon">!</div>
+          <h3>Eliminar paciente</h3>
+          <p>Se eliminara <strong>${patient.name}</strong> junto con su historial de citas.</p>
+          <div class="confirm-actions">
+            <button class="btn btn-ghost" type="button" data-confirm="no">Cancelar</button>
+            <button class="btn btn-secondary danger-confirm-btn" type="button" data-confirm="yes">Eliminar</button>
+          </div>
+        </section>
+      </div>
+    `);
+    document.body.appendChild(modal);
+    modal.querySelector('[data-confirm="no"]').addEventListener('click', () => { modal.remove(); resolve(false); });
+    modal.querySelector('[data-confirm="yes"]').addEventListener('click', () => { modal.remove(); resolve(true); });
+    modal.addEventListener('click', event => { if (event.target === modal) { modal.remove(); resolve(false); } });
+  });
+}
+function openClinicalHistoryModal(patient) {
+  const visits = patient.appointments.length
+    ? patient.appointments.map(appointment => `<tr><td>${appointment.date}</td><td>${displayTime(appointment.time)}</td><td>${appointment.reason || "Consulta"}</td><td><span class="status ${appointment.status}">${appointment.status}</span></td></tr>`).join("")
+    : `<tr><td colspan="4"><div class="alert">Este paciente no tiene citas registradas.</div></td></tr>`;
+  const modal = html(`
+    <div class="modal-backdrop">
+      <section class="card modal clinical-history-modal">
+        <div class="panel-head"><div><h2>${patient.name}</h2><p class="muted">${patient.phone} &middot; ${patient.email}</p></div><button type="button" class="btn btn-ghost" id="closeModal">Cerrar</button></div>
+        <table class="table clinical-history-detail-table">
+          <thead><tr><th>Fecha</th><th>Hora</th><th>Servicio</th><th>Estado</th></tr></thead>
+          <tbody>${visits}</tbody>
+        </table>
+      </section>
+    </div>
+  `);
+  document.body.appendChild(modal);
+  modal.querySelector("#closeModal").addEventListener("click", () => modal.remove());
+  modal.addEventListener("click", event => { if (event.target === modal) modal.remove(); });
+}
 function getDentalServiceCategories() {
   return [
     { title: "ODONTOLOGIA GENERAL", services: ["Consulta general", "Consulta de primera vez", "Revision dental", "Control periodico", "Diagnostico dental"] },
@@ -730,8 +1119,27 @@ function findSuggestedDates(fromDate = todayLocalISO(), limit = 5) {
   return dates;
 }
 
+function formatDateOption(date, index = null) {
+  const parsed = dateFromISO(date);
+  const day = parsed.toLocaleDateString("es-DO", { weekday: "long" });
+  const formattedDate = parsed.toLocaleDateString("es-DO", { day: "2-digit", month: "2-digit", year: "numeric" });
+  const firstSlot = getDayAvailability(date).free[0];
+  const prefix = index === null ? "" : `Opcion ${index + 1}: `;
+  return `${prefix}${day} ${formattedDate}${firstSlot ? ` - ${displayTime(firstSlot)}` : ""}`;
+}
+
+function formatDateOptionsMessage(intro, dates) {
+  if (!dates.length) return "No encontre disponibilidad cercana.";
+  return dates.map((date, index) => formatDateOption(date, index)).join("\n");
+}
+
 function normalizeDateInput(text) {
   const clean = String(text || "").trim();
+  const option = clean.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").match(/^(?:opcion\s*)?(\d+)$/);
+  if (option) {
+    const index = Number(option[1]) - 1;
+    return state.chat.data.suggestedDates?.[index] || null;
+  }
   if (/^\d{4}-\d{2}-\d{2}$/.test(clean)) return clean;
   return null;
 }
@@ -906,66 +1314,216 @@ function renderReportsPage() {
     </div>
     <article class="card panel premium-chart-panel"><div class="panel-head"><h2>Actividad semanal</h2><span class="status confirmada">Actualizado</span></div><div class="dashboard-chart weekly-chart"><div><i></i><span>Lun</span></div><div><i></i><span>Mar</span></div><div><i></i><span>Mie</span></div><div><i></i><span>Jue</span></div><div><i></i><span>Vie</span></div><div><i></i><span>Sab</span></div></div></article>
   `, "Reportes");
-}function renderSettings() {
+}
+
+function renderLicense() {
+  const clinic = state.clinic || {};
+  const createdAt = clinic.createdAt ? new Date(clinic.createdAt) : new Date();
+  const expiresAt = new Date(createdAt.getTime() + 1000 * 60 * 60 * 24 * 30);
+  const now = new Date();
+  const totalDays = Math.max(1, Math.ceil((expiresAt - createdAt) / 86400000));
+  const daysRemaining = Math.max(0, Math.ceil((expiresAt - now) / 86400000));
+  const progress = Math.max(0, Math.min(100, Math.round((daysRemaining / totalDays) * 100)));
+  const rawStatus = String(clinic.planStatus || "demo").toLowerCase();
+  const isExpired = rawStatus.includes("expir") || daysRemaining <= 0;
+  const isSuspended = rawStatus.includes("suspend");
+  const isDemo = rawStatus.includes("prueba") || rawStatus.includes("demo") || rawStatus.includes("pendiente");
+  const isNear = !isExpired && !isSuspended && daysRemaining <= 7;
+  const licenseTone = isExpired ? "expired" : isSuspended ? "expired" : isNear ? "warning" : isDemo ? "demo" : "active";
+  const licenseLabel = isExpired ? "Expirada" : isSuspended ? "Suspendida" : isDemo ? "Demo" : "Activa";
+  const badgeLabel = isExpired ? "Expirada" : isNear ? "Proxima a vencer" : isDemo ? "Demo" : "Activa";
+  const companyName = clinic.clinicName || "Clinica dental";
+  const adminName = clinic.dentistName || "Administrador";
+  const email = clinic.email || "sin-correo@local";
+  const activationCode = `DA-${String(clinic.id || "clinic").replace(/[^a-z0-9]/gi, "").slice(-8).toUpperCase() || "LOCAL001"}`;
+  const installId = `INS-${cryptoLike(clinic.id || email)}`;
+  const version = "v1.0.0";
+  const serverName = "localhost";
+  const databaseName = "Automatizacion dental";
+  const dateText = date => date.toLocaleDateString("es-DO", { year: "numeric", month: "short", day: "2-digit" });
+  const syncTime = now.toLocaleString("es-DO", { dateStyle: "medium", timeStyle: "short" });
+  const premiumDisabled = isExpired || isSuspended;
+  const kpis = [
+    { icon: icons.pay, label: "Licencia", title: "Plan Profesional", meta: [licenseLabel, isDemo ? "Demo comercial" : "Produccion", "Mensual"] },
+    { icon: icons.patients, label: "Dispositivos", title: "3 PC registradas", meta: ["2 usuarios conectados", "Limite permitido: 10", premiumDisabled ? "Premium bloqueado" : "Acceso habilitado"] },
+    { icon: icons.calendar, label: "Suscripcion", title: `${daysRemaining} dias restantes`, meta: [`Inicio: ${dateText(createdAt)}`, `Vence: ${dateText(expiresAt)}`, `${progress}% disponible`], progress },
+    { icon: icons.settings, label: "Servidor", title: "Online", meta: [`Ultima sync: ${syncTime}`, `Version: ${version}`, "Conexion local segura"] }
+  ];
+  const features = ["Usuarios ilimitados", "Multi sucursal", "POS", "Facturacion electronica", "Inventario", "Dashboard", "Reportes", "API", "Backups"];
+  const timeline = [["Activacion", dateText(createdAt)], ["Primer uso", dateText(createdAt)], ["Ultima sincronizacion", syncTime], ["Ultima validacion", syncTime], ["Proximo pago", dateText(expiresAt)]];
+  const content = `
+    <div class="license-dashboard license-${licenseTone}">
+      ${premiumDisabled ? `<div class="license-alert"><strong>Licencia ${licenseLabel}</strong><span>Las funciones Premium quedan deshabilitadas hasta renovar o validar la licencia.</span></div>` : ""}
+      <section class="license-hero license-card">
+        <div class="license-brand-block"><div class="license-logo">DA</div><div><span class="license-kicker">DentAce Enterprise</span><h2>${companyName}</h2><p>${adminName} - Usuario administrador</p></div></div>
+        <div class="license-hero-meta"><div class="license-state-badge"><span></span><div><strong>${badgeLabel}</strong><small>${daysRemaining} dias restantes</small></div></div><div class="license-meta-grid"><p><span>Estado</span><strong>${licenseLabel}</strong></p><p><span>Vencimiento</span><strong>${dateText(expiresAt)}</strong></p><p><span>Administrador</span><strong>${adminName}</strong></p></div></div>
+      </section>
+      <section class="license-kpi-grid">${kpis.map(card => `<article class="license-kpi license-card"><div class="license-kpi-icon">${card.icon}</div><span>${card.label}</span><h3>${card.title}</h3>${card.progress !== undefined ? `<div class="license-progress"><i style="width:${card.progress}%"></i></div>` : ""}<ul>${card.meta.map(item => `<li>${item}</li>`).join("")}</ul></article>`).join("")}</section>
+      <section class="license-info-grid"><article class="license-card license-info-panel"><div class="license-section-head"><span>Empresa</span><h3>Informacion de la empresa</h3></div><div class="license-data-list"><p><span>Empresa</span><strong>${companyName}</strong></p><p><span>Correo</span><strong>${email}</strong></p><p><span>Telefono</span><strong>${clinic.phone || "809-000-0000"}</strong></p><p><span>Cliente desde</span><strong>${dateText(createdAt)}</strong></p></div></article><article class="license-card license-info-panel"><div class="license-section-head"><span>Tecnica</span><h3>Informacion tecnica</h3></div><div class="license-data-list"><p><span>Licencia</span><strong>${activationCode}</strong></p><p><span>Version</span><strong>${version}</strong></p><p><span>Servidor</span><strong>${serverName}</strong></p><p><span>Base de datos</span><strong>${databaseName}</strong></p><p><span>Ultima validacion</span><strong>${syncTime}</strong></p><p><span>Codigo de activacion</span><strong>${activationCode}</strong></p><p><span>ID instalacion</span><strong>${installId}</strong></p></div></article></section>
+      <section class="license-plan-grid"><article class="license-card license-plan-card"><div><span class="license-kicker">Plan Profesional</span><h3>US$9.99</h3><p>Facturacion mensual</p></div><div class="license-feature-grid">${features.map(feature => `<span>${icons.check}${feature}</span>`).join("")}</div><button class="btn btn-primary" id="licenseUpgradeBtn">Actualizar plan</button></article><article class="license-card license-timeline"><div class="license-section-head"><span>Actividad</span><h3>Linea de tiempo</h3></div>${timeline.map(([label, value]) => `<div class="timeline-item"><i></i><p><strong>${label}</strong><span>${value}</span></p></div>`).join("")}</article></section>
+    </div>
+  `;
+  appShell(content, "Licencia");
+  const activate = async () => {
+    const data = await api("/api/payments/create-checkout", { method: "POST", body: "{}" });
+    showToast(data.paymentIntent.nextStep, "success");
+  };
+  document.querySelector("#licensePaymentBtn")?.addEventListener("click", activate);
+  document.querySelector("#licenseUpgradeBtn")?.addEventListener("click", activate);}
+
+function cryptoLike(value) {
+  let hash = 0;
+  String(value || "local").split("").forEach(char => { hash = ((hash << 5) - hash) + char.charCodeAt(0); hash |= 0; });
+  return Math.abs(hash).toString(16).toUpperCase().padStart(8, "0").slice(0, 8);
+}
+function loadFacebookSdk(appId) {
+  return new Promise((resolve, reject) => {
+    if (window.FB) {
+      window.FB.init({ appId, cookie: true, xfbml: false, version: "v20.0" });
+      resolve(window.FB);
+      return;
+    }
+    window.fbAsyncInit = () => {
+      window.FB.init({ appId, cookie: true, xfbml: false, version: "v20.0" });
+      resolve(window.FB);
+    };
+    const existing = document.querySelector("#facebook-jssdk");
+    if (existing) return;
+    const script = document.createElement("script");
+    script.id = "facebook-jssdk";
+    script.src = "https://connect.facebook.net/en_US/sdk.js";
+    script.onerror = () => reject(new Error("No se pudo cargar Facebook SDK"));
+    document.body.appendChild(script);
+  });
+}
+
+function waitForWhatsAppSignupPayload() {
+  return new Promise(resolve => {
+    const timeout = setTimeout(() => {
+      window.removeEventListener("message", onMessage);
+      resolve({});
+    }, 120000);
+    function onMessage(event) {
+      if (!String(event.origin || "").includes("facebook.com")) return;
+      let data = event.data;
+      if (typeof data === "string") {
+        try { data = JSON.parse(data); } catch { return; }
+      }
+      if (!data || data.type !== "WA_EMBEDDED_SIGNUP") return;
+      const payload = data.data || {};
+      if (["FINISH", "FINISHED"].includes(payload.event)) {
+        clearTimeout(timeout);
+        window.removeEventListener("message", onMessage);
+        resolve(payload);
+      }
+    }
+    window.addEventListener("message", onMessage);
+  });
+}
+
+async function renderWhatsAppConnection() {
+  const [settings, connectionData] = await Promise.all([
+    api("/api/whatsapp/embedded-signup/config"),
+    api("/api/whatsapp/connection")
+  ]);
+  const connection = connectionData.connection || {};
+  const clinicConnection = connectionData.clinicWhatsAppConnection || {};
+  const productionConnected = clinicConnection.status === "connected" && clinicConnection.phone_number_id;
+  const sandboxActive = clinicConnection.status === "sandbox";
+  const connected = productionConnected || sandboxActive;
+  const missingText = (settings.missing || []).join(", ");
+  const productionMessage = settings.message || (missingText ? `Faltan variables de produccion en .env: ${missingText}` : "Embedded Signup listo para conectar con Meta.");
+  appShell(`
+    <section class="card panel">
+      <div class="panel-head"><div><h2>Conectar WhatsApp</h2><p class="muted">DentAce atiende solo mensajes entrantes y agenda citas. Sandbox funciona para pruebas; produccion usa conexion por clinica.</p></div><span class="status ${connected ? "confirmada" : "pendiente"}">${sandboxActive ? "Sandbox activo" : productionConnected ? "Conectado" : "No conectado"}</span></div>
+      <div id="whatsappConnectMsg"></div>
+      <div class="form-grid">
+        <div class="alert span-2">Modo Sandbox / Prueba: ${settings.sandbox?.ready ? "activo" : "pendiente"}<br>Webhook URL: ${settings.webhookUrl || location.origin + "/webhooks/whatsapp"}<br>Verify token: ${settings.verifyToken}</div>
+        <label class="field"><span>Numero conectado</span><input readonly value="${clinicConnection.display_phone_number || connection.whatsappDisplayPhoneNumber || connection.whatsappBusinessPhone || "No conectado"}"></label>
+        <label class="field"><span>Phone Number ID</span><input readonly value="${clinicConnection.phone_number_id || "Pendiente"}"></label>
+        <label class="field"><span>WABA ID</span><input readonly value="${clinicConnection.waba_id || "Pendiente"}"></label>
+        <label class="field"><span>Estado</span><input readonly value="${clinicConnection.status || "disconnected"}"></label>
+        <label class="field"><span>Token</span><input readonly value="${clinicConnection.has_access_token ? (sandboxActive ? "Sandbox global" : "Guardado por clinica") : "No guardado"}"></label>
+        <label class="field"><span>Conectado</span><input readonly value="${clinicConnection.connectedAt || (sandboxActive ? "Modo prueba" : "Pendiente")}"></label>
+      </div>
+      <div class="alert ${settings.productionReady ? "" : "error"}">Modo Produccion / Clinica: ${settings.productionReady ? "listo para Embedded Signup." : productionMessage}</div>
+      <div class="hero-actions" style="margin-top:18px"><button class="btn btn-primary" id="connectWhatsAppBtn" ${settings.productionReady ? "" : "disabled"}>Conectar con Meta</button><button class="btn btn-secondary" id="disconnectWhatsAppBtn" ${productionConnected ? "" : "disabled"}>Desconectar WhatsApp</button></div>
+    </section>
+  `, "WhatsApp");
+
+  document.querySelector("#connectWhatsAppBtn")?.addEventListener("click", async () => {
+    const msg = document.querySelector("#whatsappConnectMsg");
+    msg.innerHTML = '<div class="alert">Abriendo Meta Embedded Signup...</div>';
+    try {
+      const payloadPromise = waitForWhatsAppSignupPayload();
+      const FB = await loadFacebookSdk(settings.appId);
+      FB.login(async response => {
+        try {
+          const code = response?.authResponse?.code;
+          if (!code) throw new Error("Meta no devolvio code de autorizacion.");
+          const signupPayload = await payloadPromise;
+          const data = await api("/api/whatsapp/embedded-signup/exchange", {
+            method: "POST",
+            body: JSON.stringify({
+              code,
+              redirectUri: settings.redirectUri,
+              waba_id: signupPayload.waba_id,
+              phone_number_id: signupPayload.phone_number_id,
+              display_phone_number: signupPayload.display_phone_number
+            })
+          });
+          msg.innerHTML = `<div class="alert">${data.message}</div>`;
+          await loadPrivateData();
+          renderWhatsAppConnection();
+        } catch (error) {
+          msg.innerHTML = `<div class="alert error">${error.message}</div>`;
+        }
+      }, {
+        config_id: settings.configId,
+        response_type: "code",
+        override_default_response_type: true,
+        extras: { setup: {}, sessionInfoVersion: "3" }
+      });
+    } catch (error) {
+      msg.innerHTML = `<div class="alert error">${error.message}</div>`;
+    }
+  });
+
+  document.querySelector("#disconnectWhatsAppBtn")?.addEventListener("click", async () => {
+    const msg = document.querySelector("#whatsappConnectMsg");
+    try {
+      const data = await api("/api/whatsapp/disconnect", { method: "POST", body: "{}" });
+      msg.innerHTML = `<div class="alert">${data.message}</div>`;
+      await loadPrivateData();
+      renderWhatsAppConnection();
+    } catch (error) {
+      msg.innerHTML = `<div class="alert error">${error.message}</div>`;
+    }
+  });
+}
+function renderSettings() {
   const config = state.botConfig || {};
-  const serviceCategories = getDentalServiceCategories();
-  const catalogServices = getDentalServiceCatalog();
-  const customServices = (config.services || []).filter(service => !catalogServices.includes(service));
   appShell(`
     <form class="card panel" id="botConfigForm">
-      <div class="panel-head"><h2>Configuracion del bot</h2><span class="status confirmada">Bot activo</span></div>
+      <div class="panel-head"><div><h2>Configuracion general</h2><p class="muted">Define la duracion de las citas y el horario laboral de la clinica.</p></div><span class="status confirmada">Agenda</span></div>
       <div id="configMsg"></div>
       <div class="form-grid">
-        <label class="field"><span>Nombre del bot</span><input name="botName" value="${config.botName || "DentalBot"}" required></label>
         <label class="field"><span>Duracion de citas</span><input type="number" name="appointmentDuration" min="10" step="5" value="${config.appointmentDuration || 30}" required></label>
         <label class="field"><span>Horario inicio</span><input type="time" name="workStart" value="${config.workStart || "08:00"}" required></label>
         <label class="field"><span>Horario fin</span><input type="time" name="workEnd" value="${config.workEnd || "17:00"}" required></label>
-        <label class="field span-2"><span>Mensaje de bienvenida</span><textarea name="welcomeMessage">${config.welcomeMessage || ""}</textarea></label>
-        <label class="field span-2"><span>Mensaje fuera de horario</span><textarea name="afterHoursMessage">${config.afterHoursMessage || ""}</textarea></label>
       </div>
-      <h3>Servicios disponibles</h3>
-      <div class="add-service-row"><input id="newServiceInput" placeholder="Agregar nuevo servicio"><button type="button" class="btn btn-secondary" id="addServiceBtn">Agregar servicio</button></div>
-      <div class="services-catalog" id="servicesGrid">
-        ${serviceCategories.map(category => `<section class="service-category"><h4>${category.title}</h4><div class="service-grid">${category.services.map(service => `<label class="chip"><input type="checkbox" name="services" value="${service}" ${(config.services || []).includes(service) ? "checked" : ""}> ${service}</label>`).join("")}</div></section>`).join("")}
-        ${customServices.length ? `<section class="service-category"><h4>SERVICIOS PERSONALIZADOS</h4><div class="service-grid" id="customServicesGrid">${customServices.map(service => `<label class="chip"><input type="checkbox" name="services" value="${service}" checked> ${service}</label>`).join("")}</div></section>` : ""}
-      </div>
-      <div class="hero-actions" style="margin-top:18px"><button class="btn btn-primary">Guardar configuracion</button><button type="button" class="btn btn-secondary" data-route="bot">Probar bot</button></div>
+      <div class="hero-actions" style="margin-top:18px"><button class="btn btn-primary">Guardar configuracion</button></div>
     </form>
   `, "Configuracion");
-  document.querySelector("#addServiceBtn").addEventListener("click", () => {
-    const input = document.querySelector("#newServiceInput");
-    const service = input.value.trim();
-    if (!service) return;
-    const exists = Array.from(document.querySelectorAll('input[name="services"]')).some(item => item.value.toLowerCase() === service.toLowerCase());
-    if (exists) {
-      input.value = "";
-      return;
-    }
-    const label = document.createElement("label");
-    label.className = "chip";
-    label.innerHTML = '<input type="checkbox" name="services" value="' + service.replace(/"/g, '&quot;') + '" checked> ' + service;
-    let customGrid = document.querySelector("#customServicesGrid");
-    if (!customGrid) {
-      const section = document.createElement("section");
-      section.className = "service-category";
-      section.innerHTML = `<h4>SERVICIOS PERSONALIZADOS</h4><div class="service-grid" id="customServicesGrid"></div>`;
-      document.querySelector("#servicesGrid").appendChild(section);
-      customGrid = section.querySelector("#customServicesGrid");
-    }
-    customGrid.appendChild(label);
-    input.value = "";
-  });
   document.querySelector("#botConfigForm").addEventListener("submit", async event => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const payload = Object.fromEntries(form.entries());
-    payload.services = form.getAll("services");
     const data = await api("/api/bot/config", { method: "PUT", body: JSON.stringify(payload) });
     state.botConfig = data.config;
     document.querySelector("#configMsg").innerHTML = `<div class="alert">Configuracion guardada correctamente.</div>`;
   });
 }
-
 function bindAvailabilityCalendar() {
   const panel = document.querySelector(".availability-panel");
   if (!panel) return;
@@ -1028,8 +1586,8 @@ function resetChat() {
     step: "name",
     data: { clinicId: state.clinic?.id || "clinic_demo", date: nextBusinessDate() },
     messages: [
-      { from: "bot", text: config.welcomeMessage || "Hola, soy DentalBot. Te ayudo a reservar tu cita dental." },
-      { from: "bot", text: "Para empezar, dime tu nombre completo." }
+      { from: "bot", text: config.welcomeMessage || "Hola, soy DentAce. Te ayudo a reservar tu cita dental." },
+      { from: "bot", text: "Para empezar, me permites tu primer nombre y primer apellido?" }
     ]
   };
 }
@@ -1037,10 +1595,12 @@ function resetChat() {
 function renderBot(publicDemo = false) {
   if (!state.chat.messages.length) resetChat();
   const title = publicDemo ? "Bot demo para pacientes" : "Bot para pacientes";
+  const businessPhone = state.botConfig?.whatsappBusinessPhone || state.clinic?.phone || "";
+  const businessStatus = businessPhone ? `WhatsApp Business: ${businessPhone}` : "Configura tu numero WhatsApp Business";
   const content = `
     <div class="chat-layout premium-bot-layout">
       <section class="card chat-phone premium-chat-phone">
-        <div class="chat-header premium-chat-header"><div class="chat-avatar bot-avatar">IA</div><div><strong>${state.botConfig?.botName || "DentiBot"}</strong><span>Asistente inteligente de reservas</span></div><em>Online</em></div>
+        <div class="chat-header premium-chat-header"><div class="chat-avatar bot-avatar">IA</div><div><strong>${state.botConfig?.botName || "DentAce"}</strong><span>Asistente inteligente de reservas</span></div><em>Online</em></div>
         <div class="messages premium-messages" id="messages">${state.chat.messages.map(renderChatMessage).join("")}<div class="typing-indicator"><span></span><span></span><span></span><b>escribiendo...</b></div></div>
         <form class="chat-input premium-chat-input" id="chatForm">
           <input id="chatText" autocomplete="off" placeholder="Escribe tu respuesta">
@@ -1050,6 +1610,8 @@ function renderBot(publicDemo = false) {
       <aside class="card panel bot-flow-panel">
         <div class="panel-head"><h3>Flujo automatico</h3><button class="btn btn-secondary" id="resetChat">Reiniciar</button></div>
         <p class="muted">El bot usa la disponibilidad real del calendario para sugerir solo horarios libres.</p>
+        <div class="alert">${businessStatus}. Cuando un cliente escriba a este numero, DentAce responde y agenda la cita automaticamente.</div>
+        ${!businessPhone && !publicDemo ? `<button class="btn btn-secondary" data-route="settings" type="button">Configurar numero</button>` : ""}
         ${chatProgress()}
         ${chatSummary()}
         <div class="alert">Fecha sugerida: ${state.chat.data.date || findSuggestedDates()[0] || nextBusinessDate()}</div>
@@ -1090,12 +1652,13 @@ function bindChat(publicDemo) {
       renderBot(publicDemo);
     } else if (action === "show-slots") {
       const dates = findSuggestedDates(state.chat.data.date || todayLocalISO(), 4);
-      addChatMessage("bot", dates.length ? `Tengo disponibilidad en estas fechas: ${dates.join(", ")}. Elige una fecha.` : "No encontre disponibilidad cercana. Revisa el calendario de configuracion.");
+      state.chat.data.suggestedDates = dates;
+      addChatMessage("bot", formatDateOptionsMessage("Tengo estas fechas disponibles:", dates));
       state.chat.step = "date";
       renderBot(publicDemo);
     } else if (action === "change-date") {
       state.chat.step = "date";
-      addChatMessage("bot", "Claro. Escribe una fecha en formato YYYY-MM-DD o selecciona una opcion disponible.");
+      addChatMessage("bot", "Claro. Escribe opcion 1, opcion 2 o selecciona una fecha disponible.");
       renderBot(publicDemo);
     } else if (action === "cancel") {
       addChatMessage("bot", "Reserva cancelada. Puedo ayudarte a empezar una nueva cita cuando quieras.");
@@ -1122,23 +1685,26 @@ async function handleChatText(text, publicDemo) {
   } else if (state.chat.step === "reason") {
     data.reason = text;
     const dates = findSuggestedDates(data.date || todayLocalISO(), 4);
+    data.suggestedDates = dates;
     data.date = dates[0] || data.date || nextBusinessDate();
     state.chat.step = "date";
-    addChatMessage("bot", dates.length ? `Perfecto. Tengo disponibilidad en estas fechas: ${dates.join(", ")}. Elige una fecha.` : "No encontre disponibilidad cercana. Revisa el calendario de configuracion.");
+    addChatMessage("bot", formatDateOptionsMessage("Perfecto. Tengo estas fechas disponibles:", dates));
   } else if (state.chat.step === "date") {
     const date = normalizeDateInput(text);
     if (!date) {
-      addChatMessage("bot", "Usa el formato YYYY-MM-DD. Ejemplo: 2026-07-03.");
+      addChatMessage("bot", "Escribe opcion 1, opcion 2 o una fecha en formato YYYY-MM-DD.");
     } else {
       const availability = getDayAvailability(date);
       if (!availability.free.length) {
         const alternatives = findSuggestedDates(addDaysISO(date, 1), 4);
-        addChatMessage("bot", alternatives.length ? `Ese dia esta completo. Tengo disponibilidad para estas fechas: ${alternatives.join(", ")}.` : "Ese dia esta completo y no encontre horarios cercanos disponibles.");
+        data.suggestedDates = alternatives;
+        addChatMessage("bot", alternatives.length ? formatDateOptionsMessage("Ese dia esta completo. Puedo ofrecerte estas opciones:", alternatives) : "Ese dia esta completo y no encontre horarios cercanos disponibles.");
       } else {
         data.date = date;
+        data.time = availability.free[0];
         data.slots = availability.free;
-        state.chat.step = "slot";
-        addChatMessage("bot", `Tengo estos horarios libres para ${date}: ${availability.free.map(displayTime).join(", ")}. Elige uno.`);
+        state.chat.step = "confirm";
+        addChatMessage("bot", `Confirma tu cita: ${formatDateOption(date)}. Responde Confirmar para agendar.`);
       }
     }
   } else if (state.chat.step === "slot") {
@@ -1153,7 +1719,7 @@ async function handleChatText(text, publicDemo) {
       addChatMessage("bot", `Antes de guardar confirma la reserva: Paciente: ${data.patientName}. Servicio: ${data.reason}. Fecha: ${data.date}. Hora: ${displayTime(data.time)}. Responde Confirmar para agendar.`);
     }
   } else if (state.chat.step === "confirm") {
-    if (/^(confirmar|si|sí|ok|acepto)$/i.test(text.trim())) await bookFromChat(publicDemo);
+    if (/^(confirmar|si|s�|ok|acepto)$/i.test(text.trim())) await bookFromChat(publicDemo);
     else {
       state.chat.step = "date";
       addChatMessage("bot", "Sin problema. Elige otra fecha para buscar nuevos horarios.");
@@ -1169,11 +1735,10 @@ function renderQuickOptions(publicDemo) {
     container.innerHTML = `<div class="slot-grid bot-service-options">${getBotServiceOptions(config).map(service => `<button class="chip" data-chat="${service}">${service}</button>`).join("")}</div>`;
   } else if (state.chat.step === "date") {
     const dates = findSuggestedDates(state.chat.data.date || todayLocalISO(), 6);
-    container.innerHTML = `<div class="slot-grid">${dates.map(date => `<button class="chip" data-chat="${date}">${date}</button>`).join("")}</div>`;
+    state.chat.data.suggestedDates = dates;
+    container.innerHTML = `<div class="slot-grid">${dates.map((date, index) => `<button class="chip" data-chat="opcion ${index + 1}">${formatDateOption(date, index)}</button>`).join("")}</div>`;
   } else if (state.chat.step === "slot") {
-    const slots = getDayAvailability(state.chat.data.date).free;
-    state.chat.data.slots = slots;
-    container.innerHTML = `<div class="slot-grid">${slots.map(slot => `<button class="chip" data-chat="${slot}">${displayTime(slot)}</button>`).join("")}</div>`;
+    container.innerHTML = `<div class="muted">La hora se asigna automaticamente con la primera disponibilidad.</div>`;
   } else if (state.chat.step === "confirm") {
     container.innerHTML = `<div class="slot-grid"><button class="chip" data-chat="Confirmar">Confirmar reserva</button><button class="chip" data-chat="Cambiar">Cambiar fecha</button></div>`;
   } else {
@@ -1193,7 +1758,7 @@ async function bookFromChat(publicDemo) {
   const response = await api("/api/bot/book", { method: "POST", body: JSON.stringify(data) });
   state.chat.step = "done";
   addChatMessage("bot", "Tu cita fue agendada correctamente.");
-  addChatMessage("bot", response.message || `Confirmada para ${data.date} a las ${data.time}.`);
+  addChatMessage("bot", response.message || `Confirmada para ${data.date} a las ${displayTime(data.time)}.`);
   if (!publicDemo && state.token) await loadPrivateData();
 }
 function bindRoutes() {
@@ -1201,7 +1766,7 @@ function bindRoutes() {
 }
 
 async function render() {
-  const publicRoutes = ["landing", "login", "register", "welcome", "bot-demo", "app-direct"];
+  const publicRoutes = ["landing", "login", "register", "welcome", "forgot-password", "reset-password", "bot-demo", "app-direct"];
   if (!publicRoutes.includes(state.route) && !state.token) {
     setRoute("login");
     return;
@@ -1213,13 +1778,18 @@ async function render() {
     else if (state.route === "login") renderAuth("login");
     else if (state.route === "register") renderAuth("register");
     else if (state.route === "welcome") renderWelcome();
+    else if (state.route === "forgot-password") renderForgotPassword();
+    else if (state.route === "reset-password") renderResetPassword();
     else if (state.route === "dashboard") renderDashboard();
     else if (state.route === "agenda") renderAgenda();
     else if (state.route === "calendar") renderCalendarPage();
     else if (state.route === "patients") renderPatients();
     else if (state.route === "services") renderServicesPage();
+    else if (state.route === "clinical-history") renderClinicalHistory();
+    else if (state.route === "whatsapp") await renderWhatsAppConnection();
     else if (state.route === "reports") renderReportsPage();
     else if (state.route === "settings") renderSettings();
+    else if (state.route === "license") renderLicense();
     else if (state.route === "bot") renderBot(false);
     else if (state.route === "bot-demo") {
       state.chat.data.clinicId = "clinic_demo";
@@ -1232,6 +1802,22 @@ async function render() {
 }
 
 render();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

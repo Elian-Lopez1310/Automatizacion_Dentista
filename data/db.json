@@ -4,11 +4,78 @@
       "id": "clinic_demo",
       "clinicName": "Clinica Dental Sonrisa Demo",
       "dentistName": "Dra. Laura Mendez",
-      "email": "demo@dentalbotpro.com",
+      "email": "demo@dentace.com",
       "phone": "809-555-0180",
       "passwordHash": "472d8efa120d1ad4466eeb45ca05ed1b:2a5027f2084ef4ae5b68ee63a76c1083e38a8f1e852e151ee003c37c7fe71120a85e072164e857bb9d36323d3a8f0589a2efd837389ecb71d98caeb701156679",
       "planStatus": "prueba",
-      "createdAt": "2026-07-02T02:04:14.644Z"
+      "createdAt": "2026-07-02T02:04:14.644Z",
+      "emailVerified": true,
+      "emailVerifiedAt": "2026-07-02T02:04:14.644Z"
+    },
+    {
+      "id": "clinic_04b7e382a7997a0c",
+      "clinicName": "Clinica drises",
+      "dentistName": "Doctor Elian",
+      "email": "elianstiven06@gmail.com",
+      "phone": "8296951925",
+      "passwordHash": "8d98d65586b598146604344ea03a6927:94e228d250bd3b6a4336b7c9454d6c779e25394d06be9653e52d9bbe31d7c749b16b58fb908b61ccfd4b484a4f155aab16f8dbee70e83fc3b20e8ae2d43948a3",
+      "planStatus": "pendiente de pago",
+      "createdAt": "2026-07-02T18:42:20.294Z",
+      "emailVerified": false
+    },
+    {
+      "id": "clinic_1512c127a970a6a7",
+      "clinicName": "Clinica Dansex",
+      "dentistName": "Doctor Dariel",
+      "email": "botyy206@gmail.com",
+      "phone": "8296982822",
+      "passwordHash": "9f446d60790b6cf7de49594c1e191cc4:beba76f1973a61e8519468a73a58212dcea3314310c83ce3e2d72a101e5fad5b9bcc360bd251b2d88b6364d10898152d27be8eb8418559c825730e72ed4daa28",
+      "emailVerified": true,
+      "planStatus": "pendiente de pago",
+      "createdAt": "2026-07-04T20:53:24.785Z",
+      "emailVerifiedAt": "2026-07-04T20:53:25.222Z"
+    },
+    {
+      "id": "clinic_c25d2a1cb6617b78",
+      "clinicName": "Clinica Dansexxx",
+      "dentistName": "Doctor Dariel",
+      "email": "elianstiven010@gmail.com",
+      "phone": "8296982822",
+      "passwordHash": "6acea4ad4f333c6be221bb7f85123017:ebf1cbd729856eccaa24265f22c42485c6505c1407b949f4593bf292f638bcac662c3e687958b73860b993278034b58a48d0b0781b37ed6a02ebe911ba02f2ee",
+      "emailVerified": false,
+      "emailVerificationToken": "79c5e00c19ded2fbba5c1a4e0f5c1844d8574a3bb7673b9001220df3be32dfcb",
+      "emailVerificationCode": "716062",
+      "emailVerificationExpiresAt": "2026-07-05T21:04:14.333Z",
+      "planStatus": "pendiente de pago",
+      "createdAt": "2026-07-04T21:04:14.333Z"
+    },
+    {
+      "id": "clinic_89cb861e315ecbbf",
+      "clinicName": "Clinica Dansex",
+      "dentistName": "Doctor Dariel",
+      "email": "borty206@gmail.com",
+      "phone": "8296982822",
+      "passwordHash": "cde19c2b5d8ad119232a4ee331f00eb7:3b9a0a1131b8b9d3df526e03c9cb8b4b2184ba393b5c816a465fd36493c3f5d8ef1fcb852c2b8081512dbe1c0afadc940fc96a0b142e2f063336122448752dc1",
+      "emailVerified": false,
+      "emailVerificationToken": "02e4460d20c4188986ba4349c78c9d4147451099bcfec6aee8746cdb5ca0cd16",
+      "emailVerificationCode": "748422",
+      "emailVerificationExpiresAt": "2026-07-05T21:16:17.939Z",
+      "planStatus": "pendiente de pago",
+      "createdAt": "2026-07-04T21:09:19.777Z",
+      "passwordResetToken": "143ff9a1a82168bc968dd92e9c4cf84ca353b30f814d7b00e95ef062306d17c6",
+      "passwordResetExpiresAt": "2026-07-04T22:26:27.314Z"
+    },
+    {
+      "id": "clinic_09c2656d1a9da3aa",
+      "clinicName": "asdasdsa",
+      "dentistName": "asdasdas",
+      "email": "soporteelersync@gmail.com",
+      "phone": "8296982822",
+      "passwordHash": "dad8dacd3f53463322a8ba3efc768827:a3d49bfbfdeb2108f10255e991b2ad11167b547e859a07da50f116f1d8dff4615f64f1039b69fd2943456daeed5b6ebd9fe0cc01f1b009f8ee2786673dcc7a04",
+      "emailVerified": true,
+      "planStatus": "pendiente de pago",
+      "createdAt": "2026-07-04T21:18:15.091Z",
+      "emailVerifiedAt": "2026-07-04T21:18:45.348Z"
     }
   ],
   "patients": [
@@ -19,15 +86,6 @@
       "phone": "809-221-4488",
       "email": "ana@example.com",
       "notes": "Prefiere citas en la manana.",
-      "createdAt": "2026-07-02T02:04:14.644Z"
-    },
-    {
-      "id": "pat_carlos",
-      "clinicId": "clinic_demo",
-      "name": "Carlos Pena",
-      "phone": "809-338-7744",
-      "email": "carlos@example.com",
-      "notes": "Seguimiento de ortodoncia.",
       "createdAt": "2026-07-02T02:04:14.644Z"
     },
     {
@@ -60,11 +118,20 @@
     {
       "id": "pat_5c32faf33d6571ec",
       "clinicId": "clinic_demo",
-      "name": "Elian",
+      "name": "Carlos Abreu",
       "phone": "8296951925",
       "email": "",
       "notes": "Creado automaticamente por el bot.",
       "createdAt": "2026-07-02T05:32:53.201Z"
+    },
+    {
+      "id": "pat_aade45c9b144e3b8",
+      "clinicId": "clinic_demo",
+      "name": "Elian Lopez",
+      "phone": "8290000001",
+      "email": "",
+      "notes": "Creado automaticamente por el bot.",
+      "createdAt": "2026-07-04T19:25:33.197Z"
     }
   ],
   "appointments": [
@@ -77,19 +144,6 @@
       "date": "2026-07-02",
       "time": "09:30",
       "reason": "Limpieza dental",
-      "status": "completada",
-      "source": "demo",
-      "createdAt": "2026-07-02T02:04:14.644Z"
-    },
-    {
-      "id": "apt_2",
-      "clinicId": "clinic_demo",
-      "patientId": "pat_carlos",
-      "patientName": "Carlos Pena",
-      "phone": "809-338-7744",
-      "date": "2026-07-02",
-      "time": "11:00",
-      "reason": "Ortodoncia",
       "status": "completada",
       "source": "demo",
       "createdAt": "2026-07-02T02:04:14.644Z"
@@ -116,7 +170,7 @@
       "date": "2026-07-07",
       "time": "10:30",
       "reason": "Blanqueamiento",
-      "status": "confirmada",
+      "status": "completada",
       "source": "demo",
       "createdAt": "2026-07-02T02:04:14.644Z"
     },
@@ -171,17 +225,43 @@
       "status": "pendiente",
       "source": "manual",
       "createdAt": "2026-07-02T05:32:53.201Z"
+    },
+    {
+      "id": "apt_9c10978f981f4485",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_5c32faf33d6571ec",
+      "patientName": "Carlos Abreu",
+      "phone": "8296951925",
+      "date": "2026-07-03",
+      "time": "08:00",
+      "reason": "Limpieza",
+      "status": "confirmada",
+      "source": "bot",
+      "createdAt": "2026-07-02T21:25:59.101Z"
+    },
+    {
+      "id": "apt_3cb715af2ddc1193",
+      "clinicId": "clinic_demo",
+      "patientId": "pat_aade45c9b144e3b8",
+      "patientName": "Elian Lopez",
+      "phone": "8290000001",
+      "date": "2026-07-08",
+      "time": "10:00",
+      "reason": "Consulta general",
+      "status": "confirmada",
+      "source": "whatsapp",
+      "createdAt": "2026-07-04T19:25:33.197Z"
     }
   ],
   "botConfigs": [
     {
       "clinicId": "clinic_demo",
-      "botName": "DentiBot",
+      "botName": "DentAce",
       "workStart": "08:00",
       "workEnd": "17:00",
       "appointmentDuration": 30,
-      "welcomeMessage": "Hola, soy DentiBot. Te ayudo a reservar tu cita dental.",
-      "afterHoursMessage": "Gracias por escribir. Estamos fuera de horario, pero puedo dejar tu solicitud registrada.",
+      "welcomeMessage": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.",
+      "afterHoursMessage": "Gracias por escribir. Estamos fuera de horario, pero puedo tomar tus datos.",
       "services": [
         "Consulta general",
         "Consulta de primera vez",
@@ -243,85 +323,1859 @@
         "Ortodoncia",
         "Extraccion",
         "Blanqueamiento"
-      ]
+      ],
+      "whatsappBusinessPhone": "18095550180",
+      "whatsappPhoneNumberId": "",
+      "whatsappEnabled": true,
+      "whatsappStatus": "disconnected"
+    },
+    {
+      "clinicId": "clinic_04b7e382a7997a0c",
+      "botName": "DentAce",
+      "workStart": "08:00",
+      "workEnd": "17:00",
+      "appointmentDuration": 30,
+      "welcomeMessage": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.",
+      "afterHoursMessage": "Gracias por escribir. Estamos fuera de horario, pero puedo tomar tus datos.",
+      "services": [
+        "Limpieza dental",
+        "Ortodoncia",
+        "Extraccion",
+        "Consulta general",
+        "Blanqueamiento",
+        "Emergencia dental"
+      ],
+      "whatsappBusinessPhone": "8296951925",
+      "whatsappPhoneNumberId": "",
+      "whatsappEnabled": true,
+      "whatsappStatus": "disconnected"
+    },
+    {
+      "clinicId": "clinic_1512c127a970a6a7",
+      "botName": "DentAce",
+      "workStart": "08:00",
+      "workEnd": "17:00",
+      "appointmentDuration": 30,
+      "whatsappEnabled": true,
+      "whatsappBusinessPhone": "8296982822",
+      "whatsappPhoneNumberId": "",
+      "welcomeMessage": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.",
+      "afterHoursMessage": "Gracias por escribir. Estamos fuera de horario, pero puedo tomar tus datos.",
+      "services": [
+        "Consulta general",
+        "Consulta de primera vez",
+        "Revision dental",
+        "Control periodico",
+        "Diagnostico dental",
+        "Limpieza dental",
+        "Limpieza profunda",
+        "Aplicacion de fluor",
+        "Sellantes dentales",
+        "Profilaxis dental",
+        "Blanqueamiento dental",
+        "Diseno de sonrisa",
+        "Carillas dentales",
+        "Resinas esteticas",
+        "Contorneado dental",
+        "Evaluacion ortodontica",
+        "Colocacion de brackets",
+        "Ajuste de brackets",
+        "Retiro de brackets",
+        "Invisalign",
+        "Retenedores",
+        "Tratamiento de conducto",
+        "Retratamiento de conducto",
+        "Urgencia endodontica",
+        "Tratamiento de encias",
+        "Raspado y alisado radicular",
+        "Cirugia periodontal",
+        "Mantenimiento periodontal",
+        "Coronas dentales",
+        "Puentes dentales",
+        "Protesis fija",
+        "Protesis removible",
+        "Reparacion de protesis",
+        "Evaluacion para implantes",
+        "Implantes dentales",
+        "Mantenimiento de implantes",
+        "Extraccion simple",
+        "Extraccion de cordales",
+        "Cirugia oral menor",
+        "Frenectomia",
+        "Consulta infantil",
+        "Limpieza infantil",
+        "Aplicacion de fluor infantil",
+        "Sellantes infantiles",
+        "Radiografia panoramica",
+        "Radiografia periapical",
+        "Radiografia digital",
+        "Escaner intraoral",
+        "Fotografia clinica",
+        "Bruxismo",
+        "Ferula de descarga",
+        "Tratamiento ATM",
+        "Sensibilidad dental",
+        "Halitosis",
+        "Urgencia dental",
+        "Emergencia dental",
+        "Control postoperatorio",
+        "Seguimiento de tratamiento",
+        "Consulta virtual",
+        "Ortodoncia",
+        "Extraccion",
+        "Blanqueamiento"
+      ],
+      "whatsappStatus": "disconnected"
+    },
+    {
+      "clinicId": "clinic_c25d2a1cb6617b78",
+      "botName": "DentAce",
+      "workStart": "08:00",
+      "workEnd": "17:00",
+      "appointmentDuration": 30,
+      "whatsappEnabled": true,
+      "whatsappBusinessPhone": "8296982822",
+      "whatsappPhoneNumberId": "",
+      "welcomeMessage": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.",
+      "afterHoursMessage": "Gracias por escribir. Estamos fuera de horario, pero puedo tomar tus datos.",
+      "services": [
+        "Consulta general",
+        "Consulta de primera vez",
+        "Revision dental",
+        "Control periodico",
+        "Diagnostico dental",
+        "Limpieza dental",
+        "Limpieza profunda",
+        "Aplicacion de fluor",
+        "Sellantes dentales",
+        "Profilaxis dental",
+        "Blanqueamiento dental",
+        "Diseno de sonrisa",
+        "Carillas dentales",
+        "Resinas esteticas",
+        "Contorneado dental",
+        "Evaluacion ortodontica",
+        "Colocacion de brackets",
+        "Ajuste de brackets",
+        "Retiro de brackets",
+        "Invisalign",
+        "Retenedores",
+        "Tratamiento de conducto",
+        "Retratamiento de conducto",
+        "Urgencia endodontica",
+        "Tratamiento de encias",
+        "Raspado y alisado radicular",
+        "Cirugia periodontal",
+        "Mantenimiento periodontal",
+        "Coronas dentales",
+        "Puentes dentales",
+        "Protesis fija",
+        "Protesis removible",
+        "Reparacion de protesis",
+        "Evaluacion para implantes",
+        "Implantes dentales",
+        "Mantenimiento de implantes",
+        "Extraccion simple",
+        "Extraccion de cordales",
+        "Cirugia oral menor",
+        "Frenectomia",
+        "Consulta infantil",
+        "Limpieza infantil",
+        "Aplicacion de fluor infantil",
+        "Sellantes infantiles",
+        "Radiografia panoramica",
+        "Radiografia periapical",
+        "Radiografia digital",
+        "Escaner intraoral",
+        "Fotografia clinica",
+        "Bruxismo",
+        "Ferula de descarga",
+        "Tratamiento ATM",
+        "Sensibilidad dental",
+        "Halitosis",
+        "Urgencia dental",
+        "Emergencia dental",
+        "Control postoperatorio",
+        "Seguimiento de tratamiento",
+        "Consulta virtual",
+        "Ortodoncia",
+        "Extraccion",
+        "Blanqueamiento"
+      ],
+      "whatsappStatus": "disconnected"
+    },
+    {
+      "clinicId": "clinic_89cb861e315ecbbf",
+      "botName": "DentAce",
+      "workStart": "08:00",
+      "workEnd": "17:00",
+      "appointmentDuration": 30,
+      "whatsappEnabled": true,
+      "whatsappBusinessPhone": "8296982822",
+      "whatsappPhoneNumberId": "",
+      "welcomeMessage": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.",
+      "afterHoursMessage": "Gracias por escribir. Estamos fuera de horario, pero puedo tomar tus datos.",
+      "services": [
+        "Consulta general",
+        "Consulta de primera vez",
+        "Revision dental",
+        "Control periodico",
+        "Diagnostico dental",
+        "Limpieza dental",
+        "Limpieza profunda",
+        "Aplicacion de fluor",
+        "Sellantes dentales",
+        "Profilaxis dental",
+        "Blanqueamiento dental",
+        "Diseno de sonrisa",
+        "Carillas dentales",
+        "Resinas esteticas",
+        "Contorneado dental",
+        "Evaluacion ortodontica",
+        "Colocacion de brackets",
+        "Ajuste de brackets",
+        "Retiro de brackets",
+        "Invisalign",
+        "Retenedores",
+        "Tratamiento de conducto",
+        "Retratamiento de conducto",
+        "Urgencia endodontica",
+        "Tratamiento de encias",
+        "Raspado y alisado radicular",
+        "Cirugia periodontal",
+        "Mantenimiento periodontal",
+        "Coronas dentales",
+        "Puentes dentales",
+        "Protesis fija",
+        "Protesis removible",
+        "Reparacion de protesis",
+        "Evaluacion para implantes",
+        "Implantes dentales",
+        "Mantenimiento de implantes",
+        "Extraccion simple",
+        "Extraccion de cordales",
+        "Cirugia oral menor",
+        "Frenectomia",
+        "Consulta infantil",
+        "Limpieza infantil",
+        "Aplicacion de fluor infantil",
+        "Sellantes infantiles",
+        "Radiografia panoramica",
+        "Radiografia periapical",
+        "Radiografia digital",
+        "Escaner intraoral",
+        "Fotografia clinica",
+        "Bruxismo",
+        "Ferula de descarga",
+        "Tratamiento ATM",
+        "Sensibilidad dental",
+        "Halitosis",
+        "Urgencia dental",
+        "Emergencia dental",
+        "Control postoperatorio",
+        "Seguimiento de tratamiento",
+        "Consulta virtual",
+        "Ortodoncia",
+        "Extraccion",
+        "Blanqueamiento"
+      ],
+      "whatsappStatus": "disconnected"
+    },
+    {
+      "clinicId": "clinic_09c2656d1a9da3aa",
+      "botName": "DentAce",
+      "workStart": "08:00",
+      "workEnd": "17:00",
+      "appointmentDuration": 30,
+      "whatsappEnabled": true,
+      "whatsappBusinessPhone": "8296982822",
+      "whatsappPhoneNumberId": "",
+      "welcomeMessage": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.",
+      "afterHoursMessage": "Gracias por escribir. Estamos fuera de horario, pero puedo tomar tus datos.",
+      "services": [
+        "Consulta general",
+        "Consulta de primera vez",
+        "Revision dental",
+        "Control periodico",
+        "Diagnostico dental",
+        "Limpieza dental",
+        "Limpieza profunda",
+        "Aplicacion de fluor",
+        "Sellantes dentales",
+        "Profilaxis dental",
+        "Blanqueamiento dental",
+        "Diseno de sonrisa",
+        "Carillas dentales",
+        "Resinas esteticas",
+        "Contorneado dental",
+        "Evaluacion ortodontica",
+        "Colocacion de brackets",
+        "Ajuste de brackets",
+        "Retiro de brackets",
+        "Invisalign",
+        "Retenedores",
+        "Tratamiento de conducto",
+        "Retratamiento de conducto",
+        "Urgencia endodontica",
+        "Tratamiento de encias",
+        "Raspado y alisado radicular",
+        "Cirugia periodontal",
+        "Mantenimiento periodontal",
+        "Coronas dentales",
+        "Puentes dentales",
+        "Protesis fija",
+        "Protesis removible",
+        "Reparacion de protesis",
+        "Evaluacion para implantes",
+        "Implantes dentales",
+        "Mantenimiento de implantes",
+        "Extraccion simple",
+        "Extraccion de cordales",
+        "Cirugia oral menor",
+        "Frenectomia",
+        "Consulta infantil",
+        "Limpieza infantil",
+        "Aplicacion de fluor infantil",
+        "Sellantes infantiles",
+        "Radiografia panoramica",
+        "Radiografia periapical",
+        "Radiografia digital",
+        "Escaner intraoral",
+        "Fotografia clinica",
+        "Bruxismo",
+        "Ferula de descarga",
+        "Tratamiento ATM",
+        "Sensibilidad dental",
+        "Halitosis",
+        "Urgencia dental",
+        "Emergencia dental",
+        "Control postoperatorio",
+        "Seguimiento de tratamiento",
+        "Consulta virtual",
+        "Ortodoncia",
+        "Extraccion",
+        "Blanqueamiento"
+      ],
+      "whatsappStatus": "disconnected"
     }
   ],
-  "paymentIntents": [],
+  "paymentIntents": [
+    {
+      "id": "pay_a8de5ef7956a3fd0",
+      "clinicId": "clinic_demo",
+      "provider": "placeholder",
+      "amount": 9.99,
+      "currency": "USD",
+      "status": "prepared",
+      "nextStep": "Integrar Stripe Checkout o PayPal Orders API aqui.",
+      "createdAt": "2026-07-02T18:47:42.615Z"
+    },
+    {
+      "id": "pay_853536f12c2f3147",
+      "clinicId": "clinic_demo",
+      "provider": "placeholder",
+      "amount": 9.99,
+      "currency": "USD",
+      "status": "prepared",
+      "nextStep": "Integrar Stripe Checkout o PayPal Orders API aqui.",
+      "createdAt": "2026-07-02T20:39:56.316Z"
+    }
+  ],
   "sessions": [
     {
-      "token": "4bb241d2179fbb90564333b25cf16f3c0439df56e2032569869931147927b07d",
+      "token": "9a505f7689f15ae342bc225c1bfa92d9aeb8e58e11a1b81ba20b22aba63acd05",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T14:04:48.326Z"
+      "expiresAt": "2026-07-06T06:27:05.419Z"
+    }
+  ],
+  "whatsappConversations": [
+    {
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "step": "name",
+      "data": {
+        "phone": "8290000000"
+      },
+      "updatedAt": "2026-07-05T00:09:54.224Z",
+      "history": [
+        {
+          "id": "wmsg_71baf94f8e910d6d",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:33:15.100Z"
+        },
+        {
+          "id": "wmsg_4b25649cd50ace7c",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:33:15.100Z"
+        },
+        {
+          "id": "wmsg_b17267932886c6d0",
+          "direction": "received",
+          "text": "hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:35:36.655Z"
+        },
+        {
+          "id": "wmsg_63f7ddc49a70e40e",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:35:36.655Z"
+        },
+        {
+          "id": "wmsg_d2a473e1dfabfd0d",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:42:37.657Z"
+        },
+        {
+          "id": "wmsg_5d6fb3fd65691d73",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:42:37.657Z"
+        },
+        {
+          "id": "wmsg_535b7e4f138691c5",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:43:07.610Z"
+        },
+        {
+          "id": "wmsg_77dfd61b78057de5",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:43:07.610Z"
+        },
+        {
+          "id": "wmsg_70181bd2f820f9a3",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:43:07.677Z"
+        },
+        {
+          "id": "wmsg_6d011b3fe644e1b1",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:43:07.677Z"
+        },
+        {
+          "id": "wmsg_b9e4ab0f74563215",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:43:07.731Z"
+        },
+        {
+          "id": "wmsg_c0f096216faeec72",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:43:07.731Z"
+        },
+        {
+          "id": "wmsg_945b740ccdd42b19",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:43:07.798Z"
+        },
+        {
+          "id": "wmsg_f4e8f181db5d4088",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:43:07.798Z"
+        },
+        {
+          "id": "wmsg_f9063aef0bf77616",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:43:49.416Z"
+        },
+        {
+          "id": "wmsg_666a4028464d06bf",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:43:49.416Z"
+        },
+        {
+          "id": "wmsg_0cfc4574d09ac16a",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:44:24.511Z"
+        },
+        {
+          "id": "wmsg_757aa83a3f13d41a",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:44:24.511Z"
+        },
+        {
+          "id": "wmsg_e97e82473b4b7d99",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:44:31.041Z"
+        },
+        {
+          "id": "wmsg_f531743316b19af5",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:44:31.041Z"
+        },
+        {
+          "id": "wmsg_db7a1bc1867d5d47",
+          "direction": "received",
+          "text": "",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:46:59.487Z"
+        },
+        {
+          "id": "wmsg_76e2f540b6da4714",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:46:59.487Z"
+        },
+        {
+          "id": "wmsg_f5eb4dc09023bf9e",
+          "direction": "received",
+          "text": "hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:47:48.024Z"
+        },
+        {
+          "id": "wmsg_9c4dc0f46a90b06b",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:47:48.024Z"
+        },
+        {
+          "id": "wmsg_f7fba03989407717",
+          "direction": "received",
+          "text": "Quiero una cita",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:48:27.489Z"
+        },
+        {
+          "id": "wmsg_0055320b30b20519",
+          "direction": "sent",
+          "text": "Gracias, Quiero una cita. �Que servicio necesitas?\nOpciones: Consulta general, Consulta de primera vez, Revision dental, Control periodico, Diagnostico dental, Limpieza dental, Limpieza profunda, Aplicacion de fluor",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:48:27.489Z"
+        },
+        {
+          "id": "wmsg_ef17080e74a6d276",
+          "direction": "received",
+          "text": "hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:52:54.578Z"
+        },
+        {
+          "id": "wmsg_3c073aa24b0c165c",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, dime tu nombre completo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:52:54.578Z"
+        },
+        {
+          "id": "wmsg_956255eaa7c9fde3",
+          "direction": "received",
+          "text": "hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:57:40.641Z"
+        },
+        {
+          "id": "wmsg_ffd29d01cbc409d9",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, me permites tu nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:57:40.641Z"
+        },
+        {
+          "id": "wmsg_41874dd8bac615f9",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:58:05.126Z"
+        },
+        {
+          "id": "wmsg_d2f06dcd7fc3de90",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, me permites tu nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:58:05.126Z"
+        },
+        {
+          "id": "wmsg_719e9b6c99471c7f",
+          "direction": "received",
+          "text": "Quiero una cita",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:58:20.716Z"
+        },
+        {
+          "id": "wmsg_6059b40fa1568988",
+          "direction": "sent",
+          "text": "Servicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPerfecto, te ayudo a agendar. Primero, me permites tu nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:58:20.716Z"
+        },
+        {
+          "id": "wmsg_66c2c1b758186f64",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:01:46.498Z"
+        },
+        {
+          "id": "wmsg_0df80c81cc32d3c7",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu nombre completo?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:01:46.499Z"
+        },
+        {
+          "id": "wmsg_cc8b2bea9c3e4aa1",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-05T00:09:54.224Z"
+        },
+        {
+          "id": "wmsg_5bac38e08f59e839",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-05T00:09:54.224Z"
+        }
+      ]
     },
     {
-      "token": "cd4d84acc46ded89e655f5622cba26c2a0e0df5a0498680185a75da7c6aafa6d",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T14:15:33.179Z"
+      "phone": "8290099999",
+      "step": "name",
+      "data": {
+        "phone": "8290099999"
+      },
+      "history": [
+        {
+          "id": "wmsg_78f32b86a611a46b",
+          "direction": "received",
+          "text": "hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:55:34.037Z"
+        },
+        {
+          "id": "wmsg_c6f27b7852fa6af6",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, �me permites tu nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:55:34.038Z"
+        }
+      ],
+      "updatedAt": "2026-07-04T18:55:34.038Z"
     },
     {
-      "token": "86b4cef7e493f68ba6010b84c63c36c215ab78637f049aa0d0557be4c888abbe",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T14:29:15.664Z"
+      "phone": "8290088888",
+      "step": "name",
+      "data": {
+        "phone": "8290088888"
+      },
+      "history": [
+        {
+          "id": "wmsg_3418e500d487b8d6",
+          "direction": "received",
+          "text": "hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T18:56:47.231Z"
+        },
+        {
+          "id": "wmsg_5e17078ca10c8af3",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, me permites tu nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T18:56:47.231Z"
+        }
+      ],
+      "updatedAt": "2026-07-04T18:56:47.231Z"
     },
     {
-      "token": "80954e023aece85a60621d3b76192e6faaaee58dff8d1a83d63d08f299a4c753",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T14:36:14.539Z"
+      "phone": "8290022222",
+      "step": "reason",
+      "data": {
+        "phone": "8290022222",
+        "patientName": "Carlos Lopez"
+      },
+      "history": [
+        {
+          "id": "wmsg_9bf6cddada67dbaa",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:00:31.154Z"
+        },
+        {
+          "id": "wmsg_7cb081ec9bf3147f",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu nombre completo?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:00:31.154Z"
+        },
+        {
+          "id": "wmsg_85575c3d65230bbb",
+          "direction": "received",
+          "text": "Carlos Lopez",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:00:31.159Z"
+        },
+        {
+          "id": "wmsg_bc9423d381546065",
+          "direction": "sent",
+          "text": "Gracias, Carlos Lopez. �Que servicio o motivo necesitas?\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:00:31.159Z"
+        }
+      ],
+      "updatedAt": "2026-07-04T19:00:31.159Z"
     },
     {
-      "token": "ceca38866986ab1d87033fdaf4ddb5fcab981eaa37b14fe7dc7fad0e183f933d",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T14:44:28.619Z"
+      "phone": "8290000001",
+      "step": "name",
+      "data": {
+        "phone": "8290000001"
+      },
+      "history": [
+        {
+          "id": "wmsg_f4bbd545ed0098a1",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:03:06.018Z"
+        },
+        {
+          "id": "wmsg_a085bec5e627c319",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu nombre completo?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:03:06.018Z"
+        },
+        {
+          "id": "wmsg_a771f699742a514a",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:08:19.077Z"
+        },
+        {
+          "id": "wmsg_38ddb0e747f08918",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:08:19.077Z"
+        },
+        {
+          "id": "wmsg_42c688bf060964eb",
+          "direction": "received",
+          "text": "Elian Lopez",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:08:35.373Z"
+        },
+        {
+          "id": "wmsg_e00bf373bc9ddaa6",
+          "direction": "sent",
+          "text": "Gracias, Elian Lopez. Que servicio o motivo necesitas?\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:08:35.373Z"
+        },
+        {
+          "id": "wmsg_8fa2d17c76e94a13",
+          "direction": "received",
+          "text": "1",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:09:07.584Z"
+        },
+        {
+          "id": "wmsg_72b961aa4c8272d0",
+          "direction": "sent",
+          "text": "Perfecto. Para que fecha quieres la cita? Puedes escribir hoy, ma�ana o una fecha como 2026-07-05.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:09:07.584Z"
+        },
+        {
+          "id": "wmsg_1692790cb74c6bed",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:14:30.105Z"
+        },
+        {
+          "id": "wmsg_d85e72a7cd3adb57",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:14:30.105Z"
+        },
+        {
+          "id": "wmsg_e7bc5f2659109048",
+          "direction": "received",
+          "text": "Elian Lopez",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:14:44.036Z"
+        },
+        {
+          "id": "wmsg_b96393073cdd8763",
+          "direction": "sent",
+          "text": "Gracias, Elian Lopez. Que servicio o motivo necesitas?\n\nServicios disponibles:\n\n*ODONTOLOGIA GENERAL*\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n\n*PREVENCION*\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n9. Sellantes dentales\n10. Profilaxis dental\n\n*ESTETICA DENTAL*\n11. Blanqueamiento dental\n12. Diseno de sonrisa\n13. Carillas dentales\n14. Resinas esteticas\n15. Contorneado dental\n\n*ORTODONCIA*\n16. Evaluacion ortodontica\n17. Colocacion de brackets\n18. Ajuste de brackets\n19. Retiro de brackets\n20. Invisalign\n21. Retenedores\n\n*ENDODONCIA*\n22. Tratamiento de conducto\n23. Retratamiento de conducto\n24. Urgencia endodontica\n\n*PERIODONCIA*\n25. Tratamiento de encias\n26. Raspado y alisado radicular\n27. Cirugia periodontal\n28. Mantenimiento periodontal\n\n*PROTESIS DENTAL*\n29. Coronas dentales\n30. Puentes dentales\n31. Protesis fija\n32. Protesis removible\n33. Reparacion de protesis\n\n*IMPLANTOLOGIA*\n34. Evaluacion para implantes\n35. Implantes dentales\n36. Mantenimiento de implantes\n\n*CIRUGIA ORAL*\n37. Extraccion simple\n38. Extraccion de cordales\n39. Cirugia oral menor\n40. Frenectomia\n\n*ODONTOPEDIATRIA*\n41. Consulta infantil\n42. Limpieza infantil\n43. Aplicacion de fluor infantil\n44. Sellantes infantiles\n\n*DIAGNOSTICO*\n45. Radiografia panoramica\n46. Radiografia periapical\n47. Radiografia digital\n48. Escaner intraoral\n49. Fotografia clinica\n\n*OTROS SERVICIOS*\n50. Bruxismo\n51. Ferula de descarga\n52. Tratamiento ATM\n53. Sensibilidad dental\n54. Halitosis\n55. Urgencia dental\n56. Emergencia dental\n57. Control postoperatorio\n58. Seguimiento de tratamiento\n59. Consulta virtual\n\n*SERVICIOS PERSONALIZADOS*\n60. Ortodoncia\n61. Extraccion\n62. Blanqueamiento\n\nPuedes responder con el numero del servicio o escribir el motivo con tus propias palabras.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:14:44.036Z"
+        },
+        {
+          "id": "wmsg_7eb887834e2fbdd1",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:23:36.694Z"
+        },
+        {
+          "id": "wmsg_172170d621bcec48",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:23:36.694Z"
+        },
+        {
+          "id": "wmsg_f2d0c5b2cda719f8",
+          "direction": "received",
+          "text": "Elian Lopez",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:23:49.321Z"
+        },
+        {
+          "id": "wmsg_c185418af2659437",
+          "direction": "sent",
+          "text": "Gracias, Elian Lopez. Que servicio o motivo necesitas?\n\nServicios disponibles:\n\n*ODONTOLOGIA GENERAL*\n1. Consulta general                2. Consulta de primera vez\n3. Revision dental                 4. Control periodico\n5. Diagnostico dental\n\n*PREVENCION*\n6. Limpieza dental                 7. Limpieza profunda\n8. Aplicacion de fluor             9. Sellantes dentales\n10. Profilaxis dental\n\n*ESTETICA DENTAL*\n11. Blanqueamiento dental          12. Diseno de sonrisa\n13. Carillas dentales              14. Resinas esteticas\n15. Contorneado dental\n\n*ORTODONCIA*\n16. Evaluacion ortodontica         17. Colocacion de brackets\n18. Ajuste de brackets             19. Retiro de brackets\n20. Invisalign                     21. Retenedores\n\n*ENDODONCIA*\n22. Tratamiento de conducto        23. Retratamiento de conducto\n24. Urgencia endodontica\n\n*PERIODONCIA*\n25. Tratamiento de encias          26. Raspado y alisado radicular\n27. Cirugia periodontal            28. Mantenimiento periodontal\n\n*PROTESIS DENTAL*\n29. Coronas dentales               30. Puentes dentales\n31. Protesis fija                  32. Protesis removible\n33. Reparacion de protesis\n\n*IMPLANTOLOGIA*\n34. Evaluacion para implantes      35. Implantes dentales\n36. Mantenimiento de implantes\n\n*CIRUGIA ORAL*\n37. Extraccion simple              38. Extraccion de cordales\n39. Cirugia oral menor             40. Frenectomia\n\n*ODONTOPEDIATRIA*\n41. Consulta infantil              42. Limpieza infantil\n43. Aplicacion de fluor infantil   44. Sellantes infantiles\n\n*DIAGNOSTICO*\n45. Radiografia panoramica         46. Radiografia periapical\n47. Radiografia digital            48. Escaner intraoral\n49. Fotografia clinica\n\n*OTROS SERVICIOS*\n50. Bruxismo                       51. Ferula de descarga\n52. Tratamiento ATM                53. Sensibilidad dental\n54. Halitosis                      55. Urgencia dental\n56. Emergencia dental              57. Control postoperatorio\n58. Seguimiento de tratamiento     59. Consulta virtual\n\n*SERVICIOS PERSONALIZADOS*\n60. Ortodoncia                     61. Extraccion\n62. Blanqueamiento\n\nResponde con el numero del servicio o escribe tu motivo.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:23:49.321Z"
+        },
+        {
+          "id": "wmsg_faed7f03971f47cc",
+          "direction": "received",
+          "text": "1",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:24:24.810Z"
+        },
+        {
+          "id": "wmsg_b48930a7b532d5f0",
+          "direction": "sent",
+          "text": "Perfecto. Para que fecha quieres la cita? Puedes escribir hoy, ma�ana o una fecha como 2026-07-05.",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:24:24.810Z"
+        },
+        {
+          "id": "wmsg_9dbb8a8354e203c5",
+          "direction": "received",
+          "text": "2026-07-08",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:25:13.077Z"
+        },
+        {
+          "id": "wmsg_419ae1f2af5fa11b",
+          "direction": "sent",
+          "text": "Tengo estos horarios disponibles para 2026-07-08: 08:00, 08:30, 09:00, 09:30, 10:00. Cual prefieres?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:25:13.077Z"
+        },
+        {
+          "id": "wmsg_569072615b54380d",
+          "direction": "received",
+          "text": "10:00",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-04T19:25:33.197Z"
+        },
+        {
+          "id": "wmsg_6eb7485e020f7ffb",
+          "direction": "sent",
+          "text": "Listo. Tu cita fue confirmada para 2026-07-08 a las 10:00.\nPaciente: Elian Lopez\nServicio: Consulta general",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-04T19:25:33.197Z"
+        },
+        {
+          "id": "wmsg_e8490dfa9c2008f7",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-05T00:10:39.535Z"
+        },
+        {
+          "id": "wmsg_b48386a4581a93ca",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-05T00:10:39.535Z"
+        },
+        {
+          "id": "wmsg_591571b0c83db65a",
+          "direction": "received",
+          "text": "Hola",
+          "messageId": "simulate",
+          "status": "ok",
+          "createdAt": "2026-07-05T00:10:54.516Z"
+        },
+        {
+          "id": "wmsg_74a159109b5ac815",
+          "direction": "sent",
+          "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+          "messageId": "",
+          "status": "simulated",
+          "createdAt": "2026-07-05T00:10:54.516Z"
+        }
+      ],
+      "updatedAt": "2026-07-05T00:10:54.516Z"
+    }
+  ],
+  "whatsappMessageLogs": [
+    {
+      "id": "wlog_c5206f53a1f8990a",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:33:15.099Z"
     },
     {
-      "token": "8adce24974f2884917e847089c1320a1b519a764468ba4465f42387fa215ebd9",
+      "id": "wlog_97a72e40c04a7f14",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T14:49:24.534Z"
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:33:15.100Z"
     },
     {
-      "token": "1ba346afea6ecf4097c36f4ef2eb9651ea65248e9a10ffb0a24dd44243035a34",
+      "id": "wlog_cab25cc9c18585e5",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T14:59:54.289Z"
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:35:36.655Z"
     },
     {
-      "token": "383750e9a0d0d613724121c3f8523a6d131369dac137f5c88b300d3a259aacb4",
+      "id": "wlog_5c799ce08390600c",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T15:03:35.480Z"
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:35:36.655Z"
     },
     {
-      "token": "e3d5b22594195490154faf5713c02f2e51d223bd56a6c0aa1e2cd105516899f7",
+      "id": "wlog_048eec465faf91c1",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T15:34:14.870Z"
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:42:37.656Z"
     },
     {
-      "token": "8996b1b99e658720bb558edaa08bd1a5f797a534c0877615e497ab4043da6e7f",
+      "id": "wlog_6101c1e1bc12238d",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T15:39:53.391Z"
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:42:37.657Z"
     },
     {
-      "token": "edcc8b0489e1ad490f10425d38b73774ee572d80c7f695d3ad82cb72c58bbbda",
+      "id": "wlog_ff7506453e47d5de",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T15:44:40.875Z"
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:43:07.610Z"
     },
     {
-      "token": "e98a4bcad24ad2e304162b398cc07f3c644760162ca577a37ccbd97d5a709e05",
+      "id": "wlog_94951ee501a96f7d",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T15:48:45.450Z"
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:43:07.610Z"
     },
     {
-      "token": "17de212078f85638071b42316db3a92a5870610f135f21ccf271618e59c0f918",
+      "id": "wlog_3f89b30f8790d4be",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T15:53:29.321Z"
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:43:07.677Z"
     },
     {
-      "token": "6ae00865377215519e0367eb728cb025fc3bfa829b422633d51ce5b9470d3949",
+      "id": "wlog_efb8106bcd5527f0",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T15:59:38.697Z"
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:43:07.677Z"
     },
     {
-      "token": "7c08be8676f8821a7b9f92cbb4f21dc77a1b9d8ec329b2363fa5448b640929a5",
+      "id": "wlog_26ca96c85899c315",
       "clinicId": "clinic_demo",
-      "expiresAt": "2026-07-02T16:11:14.893Z"
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:43:07.731Z"
+    },
+    {
+      "id": "wlog_38ada814ebc22e3f",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:43:07.731Z"
+    },
+    {
+      "id": "wlog_5c65266bf140cd5f",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:43:07.798Z"
+    },
+    {
+      "id": "wlog_61ef30fb62862f04",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:43:07.798Z"
+    },
+    {
+      "id": "wlog_80d4af9ae8e51c85",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:43:49.416Z"
+    },
+    {
+      "id": "wlog_4d298ad20cb5629e",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:43:49.416Z"
+    },
+    {
+      "id": "wlog_ef61180df6d04baa",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:44:24.511Z"
+    },
+    {
+      "id": "wlog_0a9d3a135dad1167",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:44:24.511Z"
+    },
+    {
+      "id": "wlog_d17e9e63b112a576",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:44:31.041Z"
+    },
+    {
+      "id": "wlog_776c070312575c70",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:44:31.041Z"
+    },
+    {
+      "id": "wlog_22da814ec96847a5",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:46:59.487Z"
+    },
+    {
+      "id": "wlog_4a9167d5c19d8bab",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:46:59.487Z"
+    },
+    {
+      "id": "wlog_3b9766b5918079ff",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:47:48.024Z"
+    },
+    {
+      "id": "wlog_5081c5f888ac1930",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:47:48.024Z"
+    },
+    {
+      "id": "wlog_82e2409df086538e",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "Quiero una cita",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:48:27.489Z"
+    },
+    {
+      "id": "wlog_762d9902544a187d",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Gracias, Quiero una cita. �Que servicio necesitas?\nOpciones: Consulta general, Consulta de primera vez, Revision dental, Control periodico, Diagnostico dental, Limpieza dental, Limpieza profunda, Aplicacion de fluor",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:48:27.489Z"
+    },
+    {
+      "id": "wlog_836965df49bb291b",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:52:54.578Z"
+    },
+    {
+      "id": "wlog_d74ed848b44dcdb3",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, dime tu nombre completo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:52:54.578Z"
+    },
+    {
+      "id": "wlog_929d1ea8e4e1a4a4",
+      "clinicId": "clinic_demo",
+      "phone": "8290099999",
+      "direction": "received",
+      "text": "hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:55:34.037Z"
+    },
+    {
+      "id": "wlog_44685410b3e5655a",
+      "clinicId": "clinic_demo",
+      "phone": "8290099999",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, �me permites tu nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:55:34.038Z"
+    },
+    {
+      "id": "wlog_a263301e04d7c34f",
+      "clinicId": "clinic_demo",
+      "phone": "8290088888",
+      "direction": "received",
+      "text": "hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:56:47.230Z"
+    },
+    {
+      "id": "wlog_7eea8f7665ce725f",
+      "clinicId": "clinic_demo",
+      "phone": "8290088888",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, me permites tu nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:56:47.231Z"
+    },
+    {
+      "id": "wlog_a2aaa457041b9d01",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:57:40.641Z"
+    },
+    {
+      "id": "wlog_6bcabf63417e5007",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, me permites tu nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:57:40.641Z"
+    },
+    {
+      "id": "wlog_b40bad6ccaf7a692",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:58:05.126Z"
+    },
+    {
+      "id": "wlog_8a7529fd12969d73",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPara empezar, me permites tu nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:58:05.126Z"
+    },
+    {
+      "id": "wlog_73e6cd3f2ee73c34",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "Quiero una cita",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T18:58:20.716Z"
+    },
+    {
+      "id": "wlog_43d98a567c58b73d",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Servicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.\n\nPerfecto, te ayudo a agendar. Primero, me permites tu nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T18:58:20.716Z"
+    },
+    {
+      "id": "wlog_3827e740cb140046",
+      "clinicId": "clinic_demo",
+      "phone": "8290022222",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:00:31.153Z"
+    },
+    {
+      "id": "wlog_be9cdfd52b07a8aa",
+      "clinicId": "clinic_demo",
+      "phone": "8290022222",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu nombre completo?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:00:31.154Z"
+    },
+    {
+      "id": "wlog_882584b3e65376ba",
+      "clinicId": "clinic_demo",
+      "phone": "8290022222",
+      "direction": "received",
+      "text": "Carlos Lopez",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:00:31.159Z"
+    },
+    {
+      "id": "wlog_691df89516eac920",
+      "clinicId": "clinic_demo",
+      "phone": "8290022222",
+      "direction": "sent",
+      "text": "Gracias, Carlos Lopez. �Que servicio o motivo necesitas?\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:00:31.159Z"
+    },
+    {
+      "id": "wlog_22ecbdc8d42216c8",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:01:46.498Z"
+    },
+    {
+      "id": "wlog_863746b092007aad",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu nombre completo?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:01:46.499Z"
+    },
+    {
+      "id": "wlog_0a7922ebfb1c18e8",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:03:06.018Z"
+    },
+    {
+      "id": "wlog_21693e2b3951f256",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu nombre completo?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:03:06.018Z"
+    },
+    {
+      "id": "wlog_5c2d374d4bae06a8",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:08:19.076Z"
+    },
+    {
+      "id": "wlog_12f30839c7530cca",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:08:19.077Z"
+    },
+    {
+      "id": "wlog_ae52600ae1b7289b",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "Elian Lopez",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:08:35.372Z"
+    },
+    {
+      "id": "wlog_fd0450155a2e61f7",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Gracias, Elian Lopez. Que servicio o motivo necesitas?\n\nServicios disponibles:\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n\nTambien puedes escribir otro motivo si no aparece en el menu.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:08:35.373Z"
+    },
+    {
+      "id": "wlog_e95b63f85b17e5c7",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "1",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:09:07.583Z"
+    },
+    {
+      "id": "wlog_4acaa915b2bc5101",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Perfecto. Para que fecha quieres la cita? Puedes escribir hoy, ma�ana o una fecha como 2026-07-05.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:09:07.584Z"
+    },
+    {
+      "id": "wlog_3bcf30beaca581fd",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:14:30.104Z"
+    },
+    {
+      "id": "wlog_fa26cca2ded5b80f",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:14:30.105Z"
+    },
+    {
+      "id": "wlog_52598dd3e6ebb926",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "Elian Lopez",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:14:44.036Z"
+    },
+    {
+      "id": "wlog_769338129bcfb682",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Gracias, Elian Lopez. Que servicio o motivo necesitas?\n\nServicios disponibles:\n\n*ODONTOLOGIA GENERAL*\n1. Consulta general\n2. Consulta de primera vez\n3. Revision dental\n4. Control periodico\n5. Diagnostico dental\n\n*PREVENCION*\n6. Limpieza dental\n7. Limpieza profunda\n8. Aplicacion de fluor\n9. Sellantes dentales\n10. Profilaxis dental\n\n*ESTETICA DENTAL*\n11. Blanqueamiento dental\n12. Diseno de sonrisa\n13. Carillas dentales\n14. Resinas esteticas\n15. Contorneado dental\n\n*ORTODONCIA*\n16. Evaluacion ortodontica\n17. Colocacion de brackets\n18. Ajuste de brackets\n19. Retiro de brackets\n20. Invisalign\n21. Retenedores\n\n*ENDODONCIA*\n22. Tratamiento de conducto\n23. Retratamiento de conducto\n24. Urgencia endodontica\n\n*PERIODONCIA*\n25. Tratamiento de encias\n26. Raspado y alisado radicular\n27. Cirugia periodontal\n28. Mantenimiento periodontal\n\n*PROTESIS DENTAL*\n29. Coronas dentales\n30. Puentes dentales\n31. Protesis fija\n32. Protesis removible\n33. Reparacion de protesis\n\n*IMPLANTOLOGIA*\n34. Evaluacion para implantes\n35. Implantes dentales\n36. Mantenimiento de implantes\n\n*CIRUGIA ORAL*\n37. Extraccion simple\n38. Extraccion de cordales\n39. Cirugia oral menor\n40. Frenectomia\n\n*ODONTOPEDIATRIA*\n41. Consulta infantil\n42. Limpieza infantil\n43. Aplicacion de fluor infantil\n44. Sellantes infantiles\n\n*DIAGNOSTICO*\n45. Radiografia panoramica\n46. Radiografia periapical\n47. Radiografia digital\n48. Escaner intraoral\n49. Fotografia clinica\n\n*OTROS SERVICIOS*\n50. Bruxismo\n51. Ferula de descarga\n52. Tratamiento ATM\n53. Sensibilidad dental\n54. Halitosis\n55. Urgencia dental\n56. Emergencia dental\n57. Control postoperatorio\n58. Seguimiento de tratamiento\n59. Consulta virtual\n\n*SERVICIOS PERSONALIZADOS*\n60. Ortodoncia\n61. Extraccion\n62. Blanqueamiento\n\nPuedes responder con el numero del servicio o escribir el motivo con tus propias palabras.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:14:44.036Z"
+    },
+    {
+      "id": "wlog_fdf2b9af360f188a",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:23:36.694Z"
+    },
+    {
+      "id": "wlog_e910a31208f84885",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:23:36.694Z"
+    },
+    {
+      "id": "wlog_5b461b6dedf0a066",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "Elian Lopez",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:23:49.321Z"
+    },
+    {
+      "id": "wlog_cafe26fd7f5b9411",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Gracias, Elian Lopez. Que servicio o motivo necesitas?\n\nServicios disponibles:\n\n*ODONTOLOGIA GENERAL*\n1. Consulta general                2. Consulta de primera vez\n3. Revision dental                 4. Control periodico\n5. Diagnostico dental\n\n*PREVENCION*\n6. Limpieza dental                 7. Limpieza profunda\n8. Aplicacion de fluor             9. Sellantes dentales\n10. Profilaxis dental\n\n*ESTETICA DENTAL*\n11. Blanqueamiento dental          12. Diseno de sonrisa\n13. Carillas dentales              14. Resinas esteticas\n15. Contorneado dental\n\n*ORTODONCIA*\n16. Evaluacion ortodontica         17. Colocacion de brackets\n18. Ajuste de brackets             19. Retiro de brackets\n20. Invisalign                     21. Retenedores\n\n*ENDODONCIA*\n22. Tratamiento de conducto        23. Retratamiento de conducto\n24. Urgencia endodontica\n\n*PERIODONCIA*\n25. Tratamiento de encias          26. Raspado y alisado radicular\n27. Cirugia periodontal            28. Mantenimiento periodontal\n\n*PROTESIS DENTAL*\n29. Coronas dentales               30. Puentes dentales\n31. Protesis fija                  32. Protesis removible\n33. Reparacion de protesis\n\n*IMPLANTOLOGIA*\n34. Evaluacion para implantes      35. Implantes dentales\n36. Mantenimiento de implantes\n\n*CIRUGIA ORAL*\n37. Extraccion simple              38. Extraccion de cordales\n39. Cirugia oral menor             40. Frenectomia\n\n*ODONTOPEDIATRIA*\n41. Consulta infantil              42. Limpieza infantil\n43. Aplicacion de fluor infantil   44. Sellantes infantiles\n\n*DIAGNOSTICO*\n45. Radiografia panoramica         46. Radiografia periapical\n47. Radiografia digital            48. Escaner intraoral\n49. Fotografia clinica\n\n*OTROS SERVICIOS*\n50. Bruxismo                       51. Ferula de descarga\n52. Tratamiento ATM                53. Sensibilidad dental\n54. Halitosis                      55. Urgencia dental\n56. Emergencia dental              57. Control postoperatorio\n58. Seguimiento de tratamiento     59. Consulta virtual\n\n*SERVICIOS PERSONALIZADOS*\n60. Ortodoncia                     61. Extraccion\n62. Blanqueamiento\n\nResponde con el numero del servicio o escribe tu motivo.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:23:49.321Z"
+    },
+    {
+      "id": "wlog_9e91127b028c84ef",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "1",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:24:24.810Z"
+    },
+    {
+      "id": "wlog_5a2a7b4896905380",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Perfecto. Para que fecha quieres la cita? Puedes escribir hoy, ma�ana o una fecha como 2026-07-05.",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:24:24.810Z"
+    },
+    {
+      "id": "wlog_b06f630725721313",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "2026-07-08",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:25:13.077Z"
+    },
+    {
+      "id": "wlog_c2445d088b6d288c",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Tengo estos horarios disponibles para 2026-07-08: 08:00, 08:30, 09:00, 09:30, 10:00. Cual prefieres?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:25:13.077Z"
+    },
+    {
+      "id": "wlog_e6c16ce1368ce0cd",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "10:00",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-04T19:25:33.197Z"
+    },
+    {
+      "id": "wlog_68a13e14b833301b",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Listo. Tu cita fue confirmada para 2026-07-08 a las 10:00.\nPaciente: Elian Lopez\nServicio: Consulta general",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-04T19:25:33.197Z"
+    },
+    {
+      "id": "wlog_400707cec067e8c6",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-05T00:09:54.223Z"
+    },
+    {
+      "id": "wlog_156657eb063738b7",
+      "clinicId": "clinic_demo",
+      "phone": "8290000000",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-05T00:09:54.224Z"
+    },
+    {
+      "id": "wlog_97131be9f52131c1",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-05T00:10:39.534Z"
+    },
+    {
+      "id": "wlog_8d6f8e80e45f751d",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-05T00:10:39.535Z"
+    },
+    {
+      "id": "wlog_ce54c73ac804e397",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "received",
+      "text": "Hola",
+      "status": "ok",
+      "reason": "",
+      "messageId": "simulate",
+      "createdAt": "2026-07-05T00:10:54.515Z"
+    },
+    {
+      "id": "wlog_e79eb0ab1089f395",
+      "clinicId": "clinic_demo",
+      "phone": "8290000001",
+      "direction": "sent",
+      "text": "Hola, soy DentAce. Te ayudo a reservar tu cita dental.\n\nPara empezar, me permites tu primer nombre y primer apellido?",
+      "status": "simulated",
+      "reason": "",
+      "messageId": "",
+      "createdAt": "2026-07-05T00:10:54.516Z"
+    }
+  ],
+  "ClinicWhatsAppConnection": [
+    {
+      "ClinicId": "clinic_demo",
+      "waba_id": "972318245839827",
+      "phone_number_id": "1241827829006082",
+      "display_phone_number": "18095550180",
+      "access_token": "EAAUT4asX0BEBR0Ksv479r45zBnadZA00MpKA20ZAA7IQEtxPfV1pVbPhhGXFj3gtSe2orp6uE9wttXPaGyNXzfpZCf3nUqqnBhAA5SdFospd0ZC4Jsg23PaeHTTuZBC8yrs2FzDRwLz6rZBDLf9ZC3ZC8j1oFRGt95Ok4TmTXd71CQVQZAMRT9kZArWbZAYEIgEwlHQzLmux8jvo46uZBljq8mM5RaEzKvf4ZB48uWXAgZBucIwS9Xak5vgoBsuBG2VzWfF160jJMr5HZCoaIHy8fifbtmV",
+      "whatsappEnabled": true,
+      "status": "sandbox",
+      "connectedAt": ""
+    },
+    {
+      "ClinicId": "clinic_04b7e382a7997a0c",
+      "waba_id": "",
+      "phone_number_id": "",
+      "display_phone_number": "8296951925",
+      "access_token": "",
+      "whatsappEnabled": true,
+      "status": "disconnected",
+      "connectedAt": ""
+    },
+    {
+      "ClinicId": "clinic_1512c127a970a6a7",
+      "waba_id": "",
+      "phone_number_id": "",
+      "display_phone_number": "8296982822",
+      "access_token": "",
+      "whatsappEnabled": true,
+      "status": "disconnected",
+      "connectedAt": ""
+    },
+    {
+      "ClinicId": "clinic_c25d2a1cb6617b78",
+      "waba_id": "",
+      "phone_number_id": "",
+      "display_phone_number": "8296982822",
+      "access_token": "",
+      "whatsappEnabled": true,
+      "status": "disconnected",
+      "connectedAt": ""
+    },
+    {
+      "ClinicId": "clinic_89cb861e315ecbbf",
+      "waba_id": "",
+      "phone_number_id": "",
+      "display_phone_number": "8296982822",
+      "access_token": "",
+      "whatsappEnabled": true,
+      "status": "disconnected",
+      "connectedAt": ""
+    },
+    {
+      "ClinicId": "clinic_09c2656d1a9da3aa",
+      "waba_id": "",
+      "phone_number_id": "",
+      "display_phone_number": "8296982822",
+      "access_token": "",
+      "whatsappEnabled": true,
+      "status": "disconnected",
+      "connectedAt": ""
     }
   ]
 }
